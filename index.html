@@ -97,7 +97,10 @@
           <select class="form-select form-select-sm" id="region" aria-label="Filter by region"><option value="">All regions</option></select>
         </div>
         <div class="col-auto">
-          <button class="btn btn-sm btn-outline-secondary" id="csv" type="button">Download CSV</button>
+          <button class="btn btn-sm btn-outline-secondary" id="csv" type="button">Download scores</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-sm btn-outline-secondary" id="csvfull" type="button">Download full worksheet</button>
         </div>
       </div>
       <div class="table-responsive">
@@ -111,8 +114,9 @@
   </div>
 
   <footer class="text-body-secondary small mt-4 pt-3 border-top" style="text-align:justify">
-    Companion to the RSCM paper. Scores trace to cited public evidence; the full per-cell worksheet with
-    evidence grades and citations is released with the paper.
+    Companion to the RSCM paper. Every score traces to cited public evidence, shown in each country&rsquo;s
+    panel. Use the buttons above the table to download the summary scores or the full per-cell worksheet,
+    with the level, evidence grade, justification, and citation for every coded cell.
   </footer>
 </main>
 
@@ -464,20 +468,37 @@
     bsDrawer.show();
   }
 
-  /* CSV download (standard browser download) */
-  document.getElementById("csv").addEventListener("click",function(){
-    var head=["country","region","R","ICC","Cr_creation","ED","nat_control","class","type","gate_pass","maker_retention","boundary"];
-    var lines=[head.join(",")];
-    DATA.forEach(function(d){
-      var row=[d.country,d.region,d.R,d.ICC,d.CREATE,d.ED,d.NATCTRL,d.cls,d.type,d.gate,d.retention,d.boundary]
-        .map(function(x){var s=String(x);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;});
-      lines.push(row.join(","));
-    });
+  /* CSV downloads (standard browser download) */
+  function cell(x){var s=(x===undefined||x===null)?"":String(x);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;}
+  function saveCSV(filename,rows){
+    var lines=rows.map(function(r){return r.map(cell).join(",");});
     var blob=new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"});
     var url=URL.createObjectURL(blob);
-    var a=document.createElement("a"); a.href=url; a.download="rscm_scores_v2.csv";
+    var a=document.createElement("a"); a.href=url; a.download=filename;
     document.body.appendChild(a); a.click();
     setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
+  }
+  // summary scores, one row per country
+  document.getElementById("csv").addEventListener("click",function(){
+    var rows=[["country","region","R","ICC","Cr_creation","ED","nat_control","class","type","gate_pass","maker_retention","boundary"]];
+    DATA.forEach(function(d){
+      rows.push([d.country,d.region,d.R,d.ICC,d.CREATE,d.ED,d.NATCTRL,d.cls,d.type,d.gate,d.retention,d.boundary]);
+    });
+    saveCSV("rscm_scores_v2.csv",rows);
+  });
+  // full per-cell worksheet: one row per coded cell, with evidence grade, justification, citation
+  document.getElementById("csvfull").addEventListener("click",function(){
+    var rows=[["country","region","class","type","gate_pass","boundary","maker_retention",
+               "construct","cell","dimension","level","evidence_grade","justification","citation"]];
+    DATA.forEach(function(d){
+      var ctx=[d.country,d.region,d.cls,d.type,d.gate,d.boundary,d.retention];
+      d.R_dims.forEach(function(x,i){ rows.push(ctx.concat(["readiness","R"+(i+1),x.name,x.level,"","",""])); });
+      d.A_dims.forEach(function(x,i){ rows.push(ctx.concat(["indigenous cryptographic capacity","A"+(i+1),x.name,x.level,"","",""])); });
+      d.B_dims.forEach(function(b){ rows.push(ctx.concat(["indigenous post-quantum control",b.key,b.name,b.level,b.ev,b.why,b.cite])); });
+      var ed=d.ED_detail;
+      rows.push(ctx.concat(["external dependency","ED","Post-quantum stack dependency",ed.level,ed.ev,ed.why,ed.cite]));
+    });
+    saveCSV("rscm_worksheet_v2.csv",rows);
   });
 
   /* theme toggle (light default) */
