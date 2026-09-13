@@ -493,8 +493,9 @@
                "construct","cell","dimension","level","evidence_grade","justification","citation"]];
     DATA.forEach(function(d){
       var ctx=[d.country,d.region,d.cls,d.type,d.gate,d.boundary,d.retention];
-      d.R_dims.forEach(function(x,i){ rows.push(ctx.concat(["readiness","R"+(i+1),x.name,x.level,"","",""])); });
-      d.A_dims.forEach(function(x,i){ rows.push(ctx.concat(["indigenous cryptographic capacity","A"+(i+1),x.name,x.level,"","",""])); });
+      var LEVELONLY="level only, not separately cited";
+      d.R_dims.forEach(function(x,i){ rows.push(ctx.concat(["readiness","R"+(i+1),x.name,x.level,LEVELONLY,"",""])); });
+      d.A_dims.forEach(function(x,i){ rows.push(ctx.concat(["indigenous cryptographic capacity","A"+(i+1),x.name,x.level,LEVELONLY,"",""])); });
       d.B_dims.forEach(function(b){ rows.push(ctx.concat(["indigenous post-quantum control",b.key,b.name,b.level,b.ev,b.why,b.cite])); });
       var ed=d.ED_detail;
       rows.push(ctx.concat(["external dependency","ED","Post-quantum stack dependency",ed.level,ed.ev,ed.why,ed.cite]));
