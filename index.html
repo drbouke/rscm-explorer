@@ -127,12 +127,42 @@
         updates a country if it already exists or adds it if new, and keeps your changes in this browser only
         (localStorage). Nothing is uploaded anywhere. Uploaded entries are marked <span class="badge rounded-pill text-bg-secondary">local</span>.</p>
       <div class="d-flex flex-wrap gap-2 align-items-center">
-        <button class="btn btn-sm btn-outline-secondary" id="dljson" type="button">Download database (JSON)</button>
-        <label class="btn btn-sm btn-primary mb-0" for="upload">Upload updates (JSON)</label>
+        <button class="btn btn-sm btn-primary" id="dltemplate" type="button">Download template</button>
+        <button class="btn btn-sm btn-outline-secondary" id="dljson" type="button">Download full database (JSON)</button>
+        <label class="btn btn-sm btn-success mb-0" for="upload">Upload updates (JSON)</label>
         <input type="file" id="upload" accept="application/json,.json" class="d-none">
         <span class="text-body-secondary small">Generated <span id="gendate"></span></span>
       </div>
       <div id="localmsg" class="small mt-2"></div>
+
+      <details class="mt-3">
+        <summary class="small fw-medium" style="cursor:pointer">Format guide (what each field means)</summary>
+        <div class="small text-body-secondary mt-2" style="text-align:justify">
+          <p class="mb-2">Upload a JSON file shaped like the template: a top-level <code>countries</code> array,
+          one object per country. You supply the coded <strong>levels (integers 0&ndash;4)</strong> and the
+          sources; the tool computes R, ICC, Cr, ED, class, type, boundary, and retention, so you never fill
+          those.</p>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered align-middle mb-2">
+              <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>country</code></td><td>text, required</td><td>Country name. Matching an existing name updates it; a new name adds it.</td></tr>
+                <tr><td><code>region</code></td><td>text</td><td>Continent for the filter (Africa, Asia, Europe, North America, South America, Oceania).</td></tr>
+                <tr><td><code>isolated</code></td><td>true / false</td><td>Set true only for a lone non-institutional academic result; it then cannot clear the maker gate.</td></tr>
+                <tr><td><code>R_dims</code></td><td>array of 5</td><td>Readiness dimensions, each <code>{name, level 0&ndash;4}</code>: strategy, inventory, standards, deployment, workforce.</td></tr>
+                <tr><td><code>A_dims</code></td><td>array of 5</td><td>Capacity layers, each <code>{name, level 0&ndash;4}</code>: authorship, vendor/supply, infrastructure, governance, research/talent.</td></tr>
+                <tr><td><code>B_dims</code></td><td>array of 5</td><td>Post-quantum control cells B1&ndash;B5, each <code>{key, name, level 0&ndash;4, ev, why, cite}</code>. B1&ndash;B3 (design, implementation, validation) decide the maker gate.</td></tr>
+                <tr><td><code>ED_detail</code></td><td>object</td><td>External dependency, <code>{level 0&ndash;4, ev, why, cite}</code>; 0 self-sufficient, 4 fully foreign.</td></tr>
+                <tr><td><code>ev</code></td><td>text</td><td>Evidence grade for that cell: <code>High</code>, <code>Medium</code>, or <code>Low</code> (drives the retention bootstrap).</td></tr>
+                <tr><td><code>why</code> / <code>cite</code></td><td>text</td><td>One-line justification and the source URL for that cell.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-0">The maker gate is <code>max(B1,B2,B3) &ge; 3 and not isolated</code>; otherwise a country
+          is capable if ICC&nbsp;&ge;&nbsp;2, a ready adopter if R&nbsp;&ge;&nbsp;2, else dependent. Tip: start
+          from <em>Download full database</em> to copy the exact shape of a real country.</p>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -630,6 +660,42 @@
     saveOverrides(ov); refreshAll();
     return {added:added, updated:updated, bad:bad};
   }
+  function saveJSON(filename, obj){
+    var blob=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"});
+    var url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download=filename; document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
+  }
+  function downloadTemplate(){
+    saveJSON("rscm_upload_template.json", {
+      "_readme": "RSCM upload template. Put one object per country under 'countries'. You provide the coded "+
+        "LEVELS (integers 0-4) and the sources; the tool re-scores each entry by the RSCM rules and computes "+
+        "R, ICC, Cr, ED, class, type, boundary, and retention, so do NOT fill those. 'ev' (evidence grade) is "+
+        "\"High\", \"Medium\", or \"Low\". Set 'isolated' to true only for a lone, non-institutional academic "+
+        "result (it then cannot clear the maker gate). Uploading updates a country if the name already exists, "+
+        "or adds it if new; changes are saved in your browser only.",
+      "countries": [{
+        "country": "Example Country",
+        "region": "Asia",
+        "isolated": false,
+        "R_dims": [
+          {"name":"Strategy & mandate","level":2},{"name":"Inventory","level":1},
+          {"name":"Standards adoption","level":2},{"name":"Deployment","level":1},{"name":"Workforce","level":2}],
+        "A_dims": [
+          {"name":"Algorithmic research & authorship","level":2},{"name":"Vendor & supply chain","level":2},
+          {"name":"Infrastructure operation","level":2},{"name":"Governance & standards","level":2},
+          {"name":"Research & talent base","level":2}],
+        "B_dims": [
+          {"key":"B1","name":"Indigenous PQC primitive","level":1,"ev":"Medium","why":"what the evidence shows","cite":"https://source.example"},
+          {"key":"B2","name":"PQC implementation","level":2,"ev":"Medium","why":"...","cite":"https://source.example"},
+          {"key":"B3","name":"PQC validation","level":1,"ev":"Low","why":"...","cite":"https://source.example"},
+          {"key":"B4","name":"National PQC integration","level":1,"ev":"Low","why":"...","cite":"https://source.example"},
+          {"key":"B5","name":"PQC replaceability","level":1,"ev":"Low","why":"...","cite":"https://source.example"}],
+        "ED_detail": {"level":3,"ev":"Medium","why":"...","cite":"https://source.example"}
+      }]
+    });
+  }
+  document.getElementById("dltemplate").addEventListener("click", downloadTemplate);
   document.getElementById("dljson").addEventListener("click", downloadJSON);
   document.getElementById("upload").addEventListener("change", function(e){
     var f=e.target.files && e.target.files[0], msg=document.getElementById("localmsg"); if(!f) return;
