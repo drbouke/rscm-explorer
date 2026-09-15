@@ -34,13 +34,17 @@
     <span class="navbar-brand mb-0 h1 fw-bold">RSCM Explorer</span>
     <span class="navbar-text small d-none d-md-inline me-auto ms-2">Readiness&ndash;Sovereignty Capability Model</span>
     <div class="dropdown">
-      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Settings</button>
-      <ul class="dropdown-menu dropdown-menu-end">
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Settings<span id="editbadge" class="badge rounded-pill text-bg-warning ms-1" hidden>0</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" style="min-width:230px">
         <li><h6 class="dropdown-header">Theme</h6></li>
         <li><button class="dropdown-item theme-opt" data-theme="light" type="button">Light</button></li>
         <li><button class="dropdown-item theme-opt" data-theme="dark" type="button">Dark</button></li>
         <li><hr class="dropdown-divider"></li>
-        <li><button class="dropdown-item" id="resetlocal2" type="button">Reset local edits</button></li>
+        <li><h6 class="dropdown-header">Local edits</h6></li>
+        <li><span class="dropdown-item-text small text-body-secondary"><strong><span id="localcount">0</span></strong> saved in this browser</span></li>
+        <li><button class="dropdown-item" id="resetlocal2" type="button">Reset to published data</button></li>
       </ul>
     </div>
   </div>
@@ -69,11 +73,6 @@
     This is a companion to the RSCM paper and reflects a purposive sample of documented cryptographic actors, not
     a global census.
   </section>
-
-  <div id="localbar" class="alert alert-warning d-flex align-items-center justify-content-between py-2 small mb-4" role="alert" hidden>
-    <span>Showing <strong><span id="localcount">0</span></strong> local edit(s) saved in this browser, on top of the published dataset.</span>
-    <button class="btn btn-sm btn-outline-dark" id="resetlocal" type="button">Reset to published data</button>
-  </div>
 
   <div class="row g-3 mb-4" id="stats"></div>
 
@@ -696,8 +695,9 @@
     setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
   }
   function updateLocalBar(){
-    var n=Object.keys(loadOverrides()).length, bar=document.getElementById("localbar");
-    if(bar){ bar.hidden = n===0; document.getElementById("localcount").textContent = n; }
+    var n=Object.keys(loadOverrides()).length;
+    var lc=document.getElementById("localcount"); if(lc) lc.textContent=n;
+    var b=document.getElementById("editbadge"); if(b){ b.textContent=n; b.hidden = n===0; }
   }
   function refreshAll(){ applyData(); renderStats(); populateRegions(); drawPlane(); render(); updateLocalBar(); }
   function ingest(records){
@@ -769,7 +769,6 @@
     rd.readAsText(f);
   });
   function resetLocal(){ try{ localStorage.removeItem(LS_KEY); }catch(e){} var m=document.getElementById("localmsg"); if(m) m.textContent=""; refreshAll(); }
-  document.getElementById("resetlocal").addEventListener("click", resetLocal);
 
   /* settings: theme options */
   function setTheme(t){ document.documentElement.setAttribute("data-bs-theme", t); drawPlane(); }
