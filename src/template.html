@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSCM Explorer</title>
+<style>__BS_CSS__</style>
+<style>
+  .plane-wrap{overflow-x:auto}
+  svg.plane{display:block;width:100%;height:auto;min-width:640px}
+  .dot{cursor:pointer}
+  .dot:hover{stroke:var(--bs-body-color);stroke-width:1.6}
+  th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
+  th .ar{opacity:.5;font-size:.75em}
+  tbody tr{cursor:pointer}
+  .lvl-track{height:6px}
+  .info-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;
+    border:1px solid var(--bs-border-color);border-radius:50%;font:italic 700 9px/1 Georgia,"Times New Roman",serif;
+    color:var(--bs-secondary-color);cursor:help;vertical-align:middle;margin-left:4px;user-select:none;flex:none}
+  .info-i:hover,.info-i:focus{color:var(--bs-body-color);border-color:var(--bs-secondary-color);outline:none}
+  .tooltip{--bs-tooltip-max-width:280px}
+  .tooltip .tooltip-inner{text-align:left}
+</style>
+</head>
+<body>
+
+<nav class="navbar bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1 fw-bold">RSCM Explorer</span>
+    <span class="navbar-text small d-none d-md-inline ms-2">Readiness&ndash;Sovereignty Capability Model</span>
+    <span class="navbar-text small text-body-tertiary d-none d-lg-inline ms-3 me-auto" id="verline"></span>
+    <div class="dropdown">
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Settings<span id="editbadge" class="badge rounded-pill text-bg-warning ms-1" hidden>0</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" style="min-width:230px">
+        <li><h6 class="dropdown-header">Theme</h6></li>
+        <li><button class="dropdown-item theme-opt" data-theme="light" type="button">Light</button></li>
+        <li><button class="dropdown-item theme-opt" data-theme="dark" type="button">Dark</button></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><h6 class="dropdown-header">Local edits</h6></li>
+        <li><span class="dropdown-item-text small text-body-secondary"><strong><span id="localcount">0</span></strong> saved in this browser</span></li>
+        <li><button class="dropdown-item" id="resetlocal2" type="button">Reset to published data</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+
+  <header class="mb-4">
+    <h1 class="h3 fw-bold">Who controls post-quantum cryptography</h1>
+    <p class="lead fs-6 text-body-secondary" style="text-align:justify">Cryptographic sovereignty is not one
+      thing. This explorer decomposes it into three distinct constructs, <strong>indigenous cryptographic
+      capacity</strong> (the general, classical-inclusive base), <strong>indigenous post-quantum control</strong>
+      (the quantum-safe layer only), and <strong>external dependency</strong>, so a country&rsquo;s classical
+      strength is never mistaken for control of the post-quantum layer. A country counts as a
+      <strong>post-quantum maker</strong> only by clearing a strict gate of demonstrated, institutionally
+      sustained post-quantum capability.</p>
+  </header>
+
+  <section class="rounded-2 bg-body-tertiary border-start border-4 border-primary p-3 mb-4 small text-body-secondary" style="text-align:justify">
+    <strong class="text-body">Reading the model.</strong> Scores are ordinal levels (0&ndash;4) coded from cited public evidence;
+    class depends on the maker gate and the ordering of a single creation level, not on arithmetic across the
+    scale. The maker gate requires level&nbsp;3 on at least one creation layer (primitive design, implementation,
+    or validation) on a sustained institutional basis; classical capability and governance authority alone never
+    qualify. Retention is the fraction of a 4000-draw plausible-state bootstrap over per-cell evidence grades that
+    keeps a country&rsquo;s maker verdict. Evidence strength is graded H&nbsp;/&nbsp;M&nbsp;/&nbsp;L per cell.
+    This is a companion to the RSCM paper and reflects a purposive sample of documented cryptographic actors, not
+    a global census.
+  </section>
+
+  <div class="row g-3 mb-4" id="stats"></div>
+
+  <ul class="nav nav-tabs mb-3" id="mainTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-explore" type="button" role="tab">Explore</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-data" type="button" role="tab">Data &amp; extend</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-about" type="button" role="tab">About</button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+  <div class="tab-pane fade show active" id="tab-explore" role="tabpanel">
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h5 card-title">The capacity&ndash;creation plane</h2>
+      <p class="card-text text-body-secondary small" style="text-align:justify">Every country placed by general
+        cryptographic capacity (horizontal)<span class="info-i" data-info="ICC">i</span> against indigenous
+        post-quantum creation (vertical)<span class="info-i" data-info="Cr">i</span>. The two are not
+        collapsed: capable countries can sit far to the right yet near the floor on creation. Only the shaded band
+        clears the maker gate<span class="info-i" data-info="gate">i</span>. Click any point for the evidence behind its scores.</p>
+      <div class="plane-wrap">
+        <svg class="plane" id="plane" viewBox="0 0 880 660" preserveAspectRatio="xMidYMid meet" role="img"
+          aria-label="Scatter of countries by cryptographic capacity against post-quantum creation"></svg>
+      </div>
+      <div class="d-flex flex-wrap gap-3 small mt-2" id="legend"></div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h5 card-title">All fifty-seven countries</h2>
+      <p class="card-text text-body-secondary small" style="text-align:justify">Readiness R, indigenous
+        cryptographic capacity ICC, indigenous post-quantum creation Cr, external dependency ED, class, and the
+        share of bootstrap re-codings that keep the maker verdict. A dagger marks a boundary case. Sort any
+        column; click a row for detail.</p>
+      <div class="row g-2 align-items-center mb-3">
+        <div class="col-12 col-md">
+          <input type="search" class="form-control form-control-sm" id="search" placeholder="Search country or region&hellip;" aria-label="Search">
+        </div>
+        <div class="col-auto">
+          <div class="btn-group btn-group-sm" role="group" id="chips" aria-label="Filter by class"></div>
+        </div>
+        <div class="col-auto">
+          <select class="form-select form-select-sm" id="region" aria-label="Filter by region"><option value="">All regions</option></select>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-sm btn-outline-secondary" id="csv" type="button">Download scores</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-sm btn-outline-secondary" id="csvfull" type="button">Download full worksheet</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-sm table-hover align-middle mb-0" id="tbl">
+          <thead><tr id="thead"></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <p class="text-body-secondary small mt-3 mb-0 d-none" id="empty">No countries match the current filters.</p>
+    </div>
+  </div>
+
+  </div><!-- /tab-explore -->
+  <div class="tab-pane fade" id="tab-data" role="tabpanel">
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h5 card-title">Extend the dataset in your browser</h2>
+      <p class="card-text text-body-secondary small" style="text-align:justify">Download the full current
+        database, edit or add countries with their coded levels and sources, then upload it back. The tool
+        re-scores each entry by the same rules (Cr, the maker gate, class, type, and a retention bootstrap),
+        updates a country if it already exists or adds it if new, and keeps your changes in this browser only
+        (localStorage). Nothing is uploaded anywhere. Uploaded entries are marked <span class="badge rounded-pill text-bg-secondary">local</span>.</p>
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <button class="btn btn-sm btn-primary" id="dltemplate" type="button">Download template</button>
+        <button class="btn btn-sm btn-outline-secondary" id="dljson" type="button">Download full database (JSON)</button>
+        <label class="btn btn-sm btn-success mb-0" for="upload">Upload updates (JSON)</label>
+        <input type="file" id="upload" accept="application/json,.json" class="d-none">
+        <span class="text-body-secondary small">Generated <span id="gendate"></span></span>
+      </div>
+      <div id="localmsg" class="small mt-2"></div>
+
+      <details class="mt-3">
+        <summary class="small fw-medium" style="cursor:pointer">Format guide (what each field means)</summary>
+        <div class="small text-body-secondary mt-2" style="text-align:justify">
+          <p class="mb-2">Upload a JSON file shaped like the template: a top-level <code>countries</code> array,
+          one object per country. You supply the coded <strong>levels (integers 0&ndash;4)</strong> and the
+          sources; the tool computes R, ICC, Cr, ED, class, type, boundary, and retention, so you never fill
+          those.</p>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered align-middle mb-2">
+              <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><code>country</code></td><td>text, required</td><td>Country name. Matching an existing name updates it; a new name adds it.</td></tr>
+                <tr><td><code>region</code></td><td>text</td><td>Continent for the filter (Africa, Asia, Europe, North America, South America, Oceania).</td></tr>
+                <tr><td><code>isolated</code></td><td>true / false</td><td>Set true only for a lone non-institutional academic result; it then cannot clear the maker gate.</td></tr>
+                <tr><td><code>R_dims</code></td><td>array of 5</td><td>Readiness dimensions, each <code>{name, level 0&ndash;4}</code>: strategy, inventory, standards, deployment, workforce.</td></tr>
+                <tr><td><code>A_dims</code></td><td>array of 5</td><td>Capacity layers, each <code>{name, level 0&ndash;4}</code>: authorship, vendor/supply, infrastructure, governance, research/talent.</td></tr>
+                <tr><td><code>B_dims</code></td><td>array of 5</td><td>Post-quantum control cells B1&ndash;B5, each <code>{key, name, level 0&ndash;4, ev, why, cite}</code>. B1&ndash;B3 (design, implementation, validation) decide the maker gate.</td></tr>
+                <tr><td><code>ED_detail</code></td><td>object</td><td>External dependency, <code>{level 0&ndash;4, ev, why, cite}</code>; 0 self-sufficient, 4 fully foreign.</td></tr>
+                <tr><td><code>ev</code></td><td>text</td><td>Evidence grade for that cell: <code>High</code>, <code>Medium</code>, or <code>Low</code> (drives the retention bootstrap).</td></tr>
+                <tr><td><code>why</code> / <code>cite</code></td><td>text</td><td>One-line justification and the source URL for that cell.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-0">The maker gate is <code>max(B1,B2,B3) &ge; 3 and not isolated</code>; otherwise a country
+          is capable if ICC&nbsp;&ge;&nbsp;2, a ready adopter if R&nbsp;&ge;&nbsp;2, else dependent. Tip: start
+          from <em>Download full database</em> to copy the exact shape of a real country.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  </div><!-- /tab-data -->
+  <div class="tab-pane fade" id="tab-about" role="tabpanel">
+    <div class="card mb-4">
+      <div class="card-body" style="text-align:justify">
+        <h2 class="h5 card-title">About this explorer</h2>
+        <p class="text-body-secondary small">RSCM decomposes cryptographic sovereignty into three distinct
+          constructs, indigenous cryptographic capacity, indigenous post-quantum control, and external
+          dependency, and certifies a country as a post-quantum maker only by a strict gate of demonstrated,
+          institutionally sustained capability. This page is the companion to the RSCM paper.</p>
+        <h3 class="h6 fw-bold mt-3">How it works</h3>
+        <p class="text-body-secondary small mb-2">The assessment is produced in two stages. Human coders score
+          each country against a fixed codebook from cited public evidence, recording a level (0&ndash;4), an
+          evidence grade, a justification, and a source for every cell. A deterministic pipeline then computes
+          the scores, applies the maker gate, classifies each country, and runs the uncertainty bootstrap. This
+          page only displays those results and, in the Data tab, re-applies the same rules to any entries you add
+          locally.</p>
+        <h3 class="h6 fw-bold mt-3">The three constructs</h3>
+        <ul class="text-body-secondary small mb-0">
+          <li><strong>Indigenous cryptographic capacity (ICC)</strong> &ndash; the general, classical-inclusive base.</li>
+          <li><strong>Indigenous post-quantum control</strong> &ndash; the quantum-safe layer only, gated for the maker label.</li>
+          <li><strong>External dependency (ED)</strong> &ndash; how much of the deployed stack is foreign-supplied.</li>
+        </ul>
+
+        <h3 class="h6 fw-bold mt-4">Version and data</h3>
+        <ul class="list-unstyled small text-body-secondary mb-0">
+          <li>Explorer version: <strong><span id="aboutver"></span></strong></li>
+          <li>Dataset last updated: <strong><span id="aboutdate"></span></strong></li>
+          <li>Assessed countries: <strong><span id="aboutn"></span></strong></li>
+        </ul>
+
+        <h3 class="h6 fw-bold mt-4">Maintainer and citation</h3>
+        <p class="text-body-secondary small mb-2">Mohamed Aly Bouke
+          (<a href="https://orcid.org/0000-0003-3264-601X" target="_blank" rel="noopener">ORCID 0000-0003-3264-601X</a>),
+          Multimedia University. Please cite the RSCM paper when you use these scores.</p>
+
+        <h3 class="h6 fw-bold mt-3">Contributing an update</h3>
+        <p class="text-body-secondary small mb-0" style="text-align:justify">Anyone can propose a correction, an
+          updated country, or a new one. In the <strong>Data &amp; extend</strong> tab, download the template,
+          fill it following the codebook (a level 0&ndash;4, an evidence grade, a justification, and a source for
+          every cell), and upload it to preview how the rules score it. To have a change reviewed for the
+          published dataset, open a
+          <a href="https://github.com/drbouke/rscm-explorer/issues/new/choose" target="_blank" rel="noopener">Dataset update issue</a>
+          on the project repository (a guided form asks for the filled template and its sources), or email the
+          filled template to <a href="mailto:bouke@ieee.org">bouke@ieee.org</a>. Every proposed cell must carry a
+          public, citable source.</p>
+      </div>
+    </div>
+  </div><!-- /tab-about -->
+  </div><!-- /tab-content -->
+
+  <footer class="text-body-secondary small mt-4 pt-3 border-top" style="text-align:justify">
+    Companion to the RSCM paper. Use the buttons above the table to download the summary scores or the full
+    per-cell worksheet. Every coded cell lists its level; the evidence grade, justification, and citation are
+    recorded for the post-quantum control layers (B1 to B5) and external dependency, the cells that decide the
+    maker gate and the dependency score. Readiness and general-capacity cells carry a coded level only.
+  </footer>
+</main>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="drawer" aria-labelledby="drawerTitle" style="width:min(480px,95vw)">
+  <div class="offcanvas-header border-bottom">
+    <div>
+      <h5 class="offcanvas-title mb-1" id="drawerTitle"></h5>
+      <div id="drawerClass"></div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="drawerBody"></div>
+</div>
+
+<script>__BS_JS__</script>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function(){
+  "use strict";
+  var PAYLOAD = JSON.parse(document.getElementById("data").textContent);
+  var ORIGINAL = PAYLOAD.countries, META0 = PAYLOAD.meta || {};
+  var LS_KEY = "rscm_local_v1";
+  var DATA, META;   // DATA = ORIGINAL merged with any local overrides
+
+  function grp(cls){
+    if(/maker$/.test(cls)) return "maker";
+    if(cls.indexOf("Capable")===0) return "capable";
+    if(cls.indexOf("Ready")===0) return "adopter";
+    return "dependent";
+  }
+  var GLAB = {maker:"Post-quantum maker", capable:"Capable, PQC-dependent", adopter:"Ready adopter", dependent:"Dependent"};
+  // Bootstrap semantic colours per class group
+  var GVAR = {maker:"success", capable:"warning", adopter:"info", dependent:"danger"};
+  function badge(g){ return "text-bg-"+GVAR[g]; }
+  function cssVar(g){ return "var(--bs-"+GVAR[g]+")"; }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  /* ---- local dataset engine: apply the RSCM rules to raw coded levels, entirely in the browser ---- */
+  function lv(x){ x=+x; if(!isFinite(x))x=0; return Math.max(0,Math.min(4,Math.round(x))); }
+  function mean(a){ return a.length? a.reduce(function(s,x){return s+x;},0)/a.length : 0; }
+  function blevels(rec){ var m={B1:0,B2:0,B3:0,B4:0,B5:0}; (rec.B_dims||[]).forEach(function(b){ if(m.hasOwnProperty(b.key)) m[b.key]=lv(b.level); }); return m; }
+  // plausible-state draw, bounded +/-1: High fixed, Medium 60% stay else one neighbour, Low uniform over level+/-1
+  function drawCell(level, ev){
+    level=lv(level);
+    if(ev==="High") return level;
+    var n=[]; if(level-1>=0)n.push(level-1); if(level+1<=4)n.push(level+1);
+    if(ev==="Low"){ var pool=[level].concat(n); return pool[(Math.random()*pool.length)|0]; }
+    if(!n.length || Math.random()<0.6) return level;
+    return n[(Math.random()*n.length)|0];
+  }
+  function pct(arr,p){ arr=arr.slice().sort(function(a,b){return a-b;}); return arr[Math.floor(p/100*(arr.length-1))]; }
+  // recompute every derived field for one raw record, so a local entry obeys the same rules as the paper
+  function computeDerived(rec){
+    var b=blevels(rec), ev={}; (rec.B_dims||[]).forEach(function(x){ev[x.key]=x.ev;});
+    var R=mean((rec.R_dims||[]).map(function(d){return lv(d.level);}));
+    var ICC=mean((rec.A_dims||[]).map(function(d){return lv(d.level);}));
+    var CREATE=(b.B1+b.B2+b.B3)/3, NATCTRL=(b.B4+b.B5)/2;
+    var ED=lv((rec.ED_detail||{}).level);
+    var isolated=!!rec.isolated;
+    var gate=(Math.max(b.B1,b.B2,b.B3)>=3) && !isolated;
+    var cls, type="";
+    if(gate){ var design=b.B1>=3, impl=b.B2>=3;
+      type = design&&impl?"Full-stack maker":(design?"Research maker":(impl?"Implementation maker":"Validation maker")); cls=type; }
+    else if(ICC>=2) cls="Capable, PQC-dependent";
+    else if(R>=2) cls="Ready adopter";
+    else cls="Dependent";
+    var atGate=[b.B1,b.B2,b.B3].filter(function(x){return x>=3;}).length;
+    var near=(Math.max(b.B1,b.B2,b.B3)===3)&&(atGate===1);
+    var lowConf=gate; ["B1","B2","B3"].forEach(function(k){ if(b[k]>=3 && ev[k]==="High") lowConf=false; });
+    var boundary=gate&&(near||lowConf);
+    // bootstrap the maker/non-maker verdict (depends only on B1-B3) and the intervals
+    var N=2000, keep=0, cre=[], icc=[];
+    for(var i=0;i<N;i++){
+      var s1=drawCell(b.B1,ev.B1||"Medium"), s2=drawCell(b.B2,ev.B2||"Medium"), s3=drawCell(b.B3,ev.B3||"Medium");
+      var g=(Math.max(s1,s2,s3)>=3)&&!isolated;
+      if(g===gate) keep++;
+      cre.push((s1+s2+s3)/3);
+      icc.push(mean((rec.A_dims||[]).map(function(d){return drawCell(lv(d.level),"Medium");})));
+    }
+    var ed0=rec.ED_detail||{};
+    return Object.assign({}, rec, {
+      country:String(rec.country||"").trim(), region:String(rec.region||"Unspecified").trim(),
+      R:+R.toFixed(1), ICC:+ICC.toFixed(1), CREATE:+CREATE.toFixed(2), IPC:+mean([b.B1,b.B2,b.B3,b.B4,b.B5]).toFixed(2),
+      NATCTRL:+NATCTRL.toFixed(1), ED:ED, cls:cls, type:type, gate:gate, boundary:boundary,
+      retention:+(keep/N).toFixed(3),
+      ICC_lo:+pct(icc,5).toFixed(2), ICC_hi:+pct(icc,95).toFixed(2),
+      CREATE_lo:+pct(cre,5).toFixed(2), CREATE_hi:+pct(cre,95).toFixed(2),
+      R_dims:rec.R_dims||[], A_dims:rec.A_dims||[], B_dims:rec.B_dims||[],
+      ED_detail:{level:ED, ev:ed0.ev||"", why:ed0.why||"", cite:ed0.cite||""},
+      _local:true
+    });
+  }
+  function loadOverrides(){ try{ return JSON.parse(localStorage.getItem(LS_KEY))||{}; }catch(e){ return {}; } }
+  function saveOverrides(o){ try{ localStorage.setItem(LS_KEY, JSON.stringify(o)); }catch(e){} }
+  function applyData(){
+    var ov=loadOverrides(), byName={};
+    ORIGINAL.forEach(function(d){ byName[d.country]=d; });
+    Object.keys(ov).forEach(function(k){ byName[k]=ov[k]; });
+    DATA=Object.keys(byName).map(function(k){return byName[k];});
+    var counts={}; DATA.forEach(function(d){ counts[d.cls]=(counts[d.cls]||0)+1; });
+    var rets=DATA.map(function(d){return d.retention;}).filter(function(x){return typeof x==="number";});
+    META={ n:DATA.length, counts:counts, generated:META0.generated,
+           mean_retention: rets.length? +(rets.reduce(function(s,x){return s+x;},0)/rets.length).toFixed(3):0 };
+  }
+  applyData();
+
+  /* glossary: plain explanations of every metric and value, shown on info icons */
+  var INFO = {
+    n:"Total countries in this purposive sample of documented cryptographic actors. It is not a global census.",
+    makers:"Countries that clear the maker gate: they design, implement, or validate post-quantum cryptography on a sustained institutional basis. Maker type marks which creation layers clear the gate, not depth or scale; two makers of the same type can differ widely, and depth is read from Cr, ICC, and the plane above.",
+    maker:"A country that clears the maker gate by designing, implementing, or validating post-quantum cryptography on a sustained institutional basis. The type marks which creation layers clear the gate, not depth or scale, so two makers of the same type can differ widely; read depth from Cr, ICC, and the plane above.",
+    capable:"Countries with real general cryptographic capacity that still depend on foreign parties for the post-quantum layer.",
+    adopter:"Ready adopters: countries that have advanced their migration without building either capacity or control.",
+    dependent:"Countries low on both general capacity and post-quantum creation, relying on external supply for the quantum-safe stack.",
+    meanret:"Average maker retention across all makers. Higher means the maker set as a whole is robust to coding uncertainty.",
+    retention:"Share of a 4000-draw plausible-state bootstrap, resampling each cell within its evidence grade, that keeps the country's maker verdict. Near 100% means the verdict is robust.",
+    R:"Readiness R (0 to 4): how far the country has gone in preparing to deploy post-quantum cryptography, averaged over strategy, inventory, standards adoption, deployment, and workforce. It measures preparation, not the ability to build the cryptography.",
+    ICC:"Indigenous cryptographic capacity (0 to 4): the general, classical-inclusive ability to produce and control cryptography, averaged over five layers. A high value can sit next to near-zero post-quantum creation.",
+    Cr:"Indigenous post-quantum creation (0 to 4): how much of the quantum-safe layer the country itself designs, implements, and validates. This is the axis the maker gate reads.",
+    ED:"External dependency (0 to 4): how much the post-quantum stack relies on foreign primitives, products, and validation. A higher value means more dependent.",
+    natctrl:"National control (0 to 4): the degree to which the country can govern and sustain its own post-quantum stack.",
+    cls:"Class under the maker gate: post-quantum maker, capable but PQC-dependent, ready adopter, or dependent.",
+    gate:"Maker gate: a country qualifies as a maker only by reaching level 3 on at least one creation layer (primitive design, implementation, or validation) on a sustained institutional basis. Classical capability and governance authority alone never qualify. Clearing the gate is a threshold, not a ranking of depth or scale.",
+    boundary:"Boundary case: the maker verdict rests on a creation cell at the 2-to-3 threshold, so it is sensitive to coding and flips in a meaningful share of the bootstrap.",
+    evidence:"Evidence grade for the cell: H high, M medium, L low. It marks how strong the public evidence behind the score is.",
+    control:"The five coded layers of the quantum-safe stack: primitive design, implementation, validation, national integration, and replaceability.",
+    capacity:"General, classical-inclusive cryptographic capacity across five layers of authorship, supply, operation, governance, and talent.",
+    readiness:"Preparation to deploy post-quantum cryptography, across five readiness dimensions.",
+    ci:"Uncertainty interval: the range the score spans across the plausible-state bootstrap over evidence grades.",
+    gateBand:"Shaded band: the post-quantum creation region. Only countries at or above the gate line on creation can clear the maker gate."
+  };
+  function ii(key){
+    var t=INFO[key]; if(!t) return "";
+    return ' <span class="info-i" tabindex="0" role="button" aria-label="explain" data-bs-toggle="tooltip" '+
+           'data-bs-placement="top" data-bs-title="'+esc(t)+'">i</span>';
+  }
+  function tips(root){
+    (root||document).querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(el){
+      var ex=bootstrap.Tooltip.getInstance(el); if(ex) ex.dispose();
+      new bootstrap.Tooltip(el,{container:"body"});
+    });
+  }
+
+  /* stat cards */
+  function renderStats(){
+    var c = META.counts;
+    var makers = (c["Full-stack maker"]||0)+(c["Research maker"]||0)+(c["Implementation maker"]||0)+(c["Validation maker"]||0);
+    var cards = [
+      {v:META.n, l:"countries assessed", cl:"", i:"n"},
+      {v:makers, l:"post-quantum makers", cl:"text-success", i:"makers"},
+      {v:c["Capable, PQC-dependent"]||0, l:"capable but PQC-dependent", cl:"text-warning-emphasis", i:"capable"},
+      {v:c["Dependent"]||0, l:"dependent", cl:"text-danger", i:"dependent"},
+      {v:Math.round(META.mean_retention*100)+"%", l:"mean maker retention", cl:"", i:"meanret"}
+    ];
+    document.getElementById("stats").innerHTML = cards.map(function(s){
+      return '<div class="col-6 col-md">'+
+        '<div class="card h-100"><div class="card-body py-3">'+
+        '<div class="fs-3 fw-bold '+s.cl+'">'+s.v+'</div>'+
+        '<div class="text-body-secondary small">'+s.l+ii(s.i)+'</div>'+
+        '</div></div></div>';
+    }).join("");
+    tips(document.getElementById("stats"));
+  }
+  renderStats();
+
+  /* plane (SVG, coloured with Bootstrap theme variables) */
+  function drawPlane(){
+    var svg = document.getElementById("plane");
+    var W=880,H=660, m={l:70,r:34,t:28,b:100};
+    var x0=m.l, x1=W-m.r, y0=H-m.b, y1=m.t;
+    function sx(v){return x0+(v/4)*(x1-x0);}
+    function sy(v){return y0-(v/4)*(y0-y1);}
+    var grid="var(--bs-border-color)", txt="var(--bs-secondary-color)", ink="var(--bs-body-color)";
+    var s="";
+    s+='<rect x="'+x0+'" y="'+sy(4)+'" width="'+(x1-x0)+'" height="'+(sy(2)-sy(4))+'" fill="var(--bs-success)" opacity="0.08"/>';
+    for(var g=0;g<=4;g++){
+      s+='<line x1="'+x0+'" y1="'+sy(g)+'" x2="'+x1+'" y2="'+sy(g)+'" stroke="'+grid+'" opacity="'+(g===0?1:.5)+'"/>';
+      s+='<line x1="'+sx(g)+'" y1="'+y0+'" x2="'+sx(g)+'" y2="'+y1+'" stroke="'+grid+'" opacity="'+(g===0?1:.5)+'"/>';
+      s+='<text x="'+sx(g)+'" y="'+(y0+18)+'" text-anchor="middle" font-size="10" fill="'+txt+'">'+g+'</text>';
+      s+='<text x="'+(x0-10)+'" y="'+(sy(g)+4)+'" text-anchor="end" font-size="10" fill="'+txt+'">'+g+'</text>';
+    }
+    s+='<line x1="'+x0+'" y1="'+sy(2)+'" x2="'+x1+'" y2="'+sy(2)+'" stroke="var(--bs-success)" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.6"/>';
+    s+='<text x="'+(x1-6)+'" y="'+(sy(2)-7)+'" text-anchor="end" font-size="10.5" font-style="italic" fill="var(--bs-success)">PQC-creation region &middot; maker gate</text>';
+    s+='<text x="'+((x0+x1)/2)+'" y="'+(y0+42)+'" text-anchor="middle" font-size="12" font-weight="600" fill="'+ink+'">Indigenous cryptographic capacity (general) &rarr;</text>';
+    s+='<text transform="translate('+(x0-44)+','+((y0+y1)/2)+') rotate(-90)" text-anchor="middle" font-size="12" font-weight="600" fill="'+ink+'">Indigenous PQC creation &rarr;</text>';
+    // base positions at true scores
+    function hsh(str){var h=0;for(var i=0;i<str.length;i++){h=(h*31+str.charCodeAt(i))>>>0;}return (h%1000)/1000;}
+    var gy=sy(2); // gate line
+    var pts=DATA.map(function(d,i){
+      var g=grp(d.cls);
+      return {i:i,d:d,g:g,r:(g==="maker"?5.5:4.5),
+              x:sx(d.ICC)+(hsh(d.country)-0.5)*3, y:sy(d.CREATE)+(hsh(d.country+"y")-0.5)*3};
+    });
+    // beeswarm declutter: push overlapping dots apart, minimally
+    for(var it=0;it<140;it++){
+      for(var a=0;a<pts.length;a++) for(var b=a+1;b<pts.length;b++){
+        var pa=pts[a],pb=pts[b],dx=pb.x-pa.x,dy=pb.y-pa.y;
+        var dist=Math.sqrt(dx*dx+dy*dy)||0.01, min=pa.r+pb.r+2.5;
+        if(dist<min){var push=(min-dist)/2,ux=dx/dist,uy=dy/dist;
+          pa.x-=ux*push;pa.y-=uy*push;pb.x+=ux*push;pb.y+=uy*push;}
+      }
+    }
+    // keep in bounds and on the correct side of the gate line
+    pts.forEach(function(p){
+      p.x=Math.max(x0+p.r,Math.min(x1-p.r,p.x));
+      p.y=Math.max(y1+p.r,Math.min(y0-p.r,p.y));
+      if(p.d.CREATE>2) p.y=Math.min(p.y,gy-p.r-0.5);
+      else if(p.d.CREATE<2) p.y=Math.max(p.y,gy+p.r+0.5);
+    });
+    pts.forEach(function(p){
+      s+='<circle class="dot" data-i="'+p.i+'" cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+p.r+'" '+
+         'fill="'+cssVar(p.g)+'" stroke="'+(p.d.boundary?"#7a5a00":"var(--bs-body-bg)")+'" stroke-width="'+(p.d.boundary?1.8:0.9)+'">'+
+         '<title>'+esc(p.d.country)+' &middot; '+esc(p.d.cls)+'</title></circle>';
+    });
+    // greedy label placement: label every country that fits without overlap or clipping
+    var placed=pts.map(function(p){return {x:p.x-p.r,y:p.y-p.r,w:2*p.r,h:2*p.r};});
+    function hit(r){for(var i=0;i<placed.length;i++){var q=placed[i];
+      if(r.x<q.x+q.w&&r.x+r.w>q.x&&r.y<q.y+q.h&&r.y+r.h>q.y)return true;}return false;}
+    var order=pts.slice().sort(function(a,b){
+      var am=(a.g==="maker")?0:1,bm=(b.g==="maker")?0:1;
+      if(am!==bm)return am-bm;
+      if(a.d.boundary!==b.d.boundary)return a.d.boundary?-1:1;
+      return b.d.CREATE-a.d.CREATE;});
+    order.forEach(function(p){
+      var name=p.d.country,w=name.length*4.7+3,h=9;
+      var cands=[{x:p.x+p.r+2,y:p.y-h/2},{x:p.x-p.r-2-w,y:p.y-h/2},
+                 {x:p.x-w/2,y:p.y-p.r-1-h},{x:p.x-w/2,y:p.y+p.r+1}];
+      for(var c=0;c<cands.length;c++){
+        var r={x:cands[c].x,y:cands[c].y,w:w,h:h};
+        if(r.x<x0||r.x+r.w>x1||r.y<y1||r.y+r.h>y0)continue;
+        if(hit(r))continue;
+        placed.push(r);
+        s+='<text x="'+r.x.toFixed(1)+'" y="'+(r.y+h-1.5).toFixed(1)+'" font-size="8" fill="'+ink+'">'+esc(name)+'</text>';
+        return;
+      }
+    });
+    svg.innerHTML=s;
+    svg.querySelectorAll(".dot").forEach(function(el){
+      el.addEventListener("click",function(){openDrawer(DATA[+el.getAttribute("data-i")]);});
+    });
+  }
+  document.getElementById("legend").innerHTML =
+    ["maker","capable","adopter","dependent"].map(function(k){
+      return '<span class="d-inline-flex align-items-center gap-1"><span class="badge rounded-pill '+badge(k)+'">&nbsp;</span>'+GLAB[k]+ii(k)+'</span>';
+    }).join("") +
+    '<span class="d-inline-flex align-items-center gap-1"><span class="badge rounded-pill border border-2" style="background:transparent;border-color:#7a5a00!important">&nbsp;</span>boundary case'+ii("boundary")+'</span>'+
+    '<span class="d-inline-flex align-items-center gap-1"><span class="badge rounded-pill" style="background:rgba(25,135,84,.18)">&nbsp;</span>maker gate region'+ii("gateBand")+'</span>';
+  tips(document.getElementById("legend"));
+
+  /* table */
+  var COLS = [
+    {k:"country", t:"Country"},
+    {k:"R", t:"R", n:1, i:"R"},
+    {k:"ICC", t:"ICC", n:1, i:"ICC"},
+    {k:"CREATE", t:"Cr", n:1, i:"Cr"},
+    {k:"ED", t:"ED", n:0, i:"ED"},
+    {k:"cls", t:"Class", i:"cls"},
+    {k:"retention", t:"Retention", n:0, i:"retention"}
+  ];
+  var state={q:"",grp:"",region:"",sortk:"cls",dir:1};
+  var CLSRANK={"Full-stack maker":0,"Research maker":1,"Implementation maker":2,"Validation maker":3,"Capable, PQC-dependent":4,"Ready adopter":5,"Dependent":6};
+
+  function populateRegions(){
+    var set={}; DATA.forEach(function(d){set[d.region]=1;});
+    var sel=document.getElementById("region"), cur=sel.value;
+    sel.innerHTML='<option value="">All regions</option>';
+    Object.keys(set).sort().forEach(function(r){var o=document.createElement("option");o.value=r;o.textContent=r;sel.appendChild(o);});
+    sel.value = set[cur]? cur : "";
+    if(!set[cur]) state.region="";
+  }
+  populateRegions();
+  (function(){
+    var chips=[["","All"],["maker","Makers"],["capable","Capable"],["adopter","Adopter"],["dependent","Dependent"]];
+    document.getElementById("chips").innerHTML=chips.map(function(c,i){
+      return '<input type="radio" class="btn-check" name="clsfilter" id="cf'+i+'" autocomplete="off" data-g="'+c[0]+'"'+(i===0?' checked':'')+'>'+
+             '<label class="btn btn-outline-secondary" for="cf'+i+'">'+c[1]+'</label>';
+    }).join("");
+    document.querySelectorAll('#chips .btn-check').forEach(function(b){
+      b.addEventListener("change",function(){ state.grp=b.getAttribute("data-g"); render(); });
+    });
+  })();
+  (function(){
+    document.getElementById("thead").innerHTML=COLS.map(function(c){
+      return '<th class="sortable'+(c.n!==undefined?' text-end':'')+'" data-k="'+c.k+'">'+c.t+' <span class="ar"></span>'+(c.i?ii(c.i):'')+'</th>';
+    }).join("");
+    document.querySelectorAll("#thead th").forEach(function(th){
+      th.addEventListener("click",function(){
+        var k=th.getAttribute("data-k");
+        if(state.sortk===k) state.dir*=-1; else {state.sortk=k;state.dir=1;}
+        render();
+      });
+    });
+    // clicking an info icon explains, it must not trigger a column sort
+    document.querySelectorAll("#thead .info-i").forEach(function(el){
+      el.addEventListener("click",function(e){e.stopPropagation();});
+    });
+    tips(document.getElementById("thead"));
+  })();
+
+  function filtered(){
+    var q=state.q.toLowerCase();
+    return DATA.filter(function(d){
+      if(state.grp && grp(d.cls)!==state.grp) return false;
+      if(state.region && d.region!==state.region) return false;
+      if(q && (d.country+" "+d.region+" "+d.cls).toLowerCase().indexOf(q)<0) return false;
+      return true;
+    });
+  }
+  function sortRows(rows){
+    var k=state.sortk, dir=state.dir;
+    rows.sort(function(a,b){
+      var r;
+      if(k==="cls") r=(CLSRANK[a.cls]-CLSRANK[b.cls])||(b.CREATE-a.CREATE);
+      else if(k==="country") r=a.country.localeCompare(b.country);
+      else r=a[k]-b[k];
+      return r*dir;
+    });
+    return rows;
+  }
+  function shortCls(cls){ return cls.replace("Capable, PQC-dependent","Capable, dependent"); }
+
+  function render(){
+    var rows=sortRows(filtered());
+    document.getElementById("empty").classList.toggle("d-none", rows.length>0);
+    document.getElementById("tbody").innerHTML=rows.map(function(d){
+      var g=grp(d.cls), ret=Math.round(d.retention*100);
+      var retCell = g==="maker"
+        ? '<span class="fw-medium">'+ret+'%</span>'
+        : '<span class="text-body-tertiary">'+ret+'%</span>';
+      return '<tr data-c="'+esc(d.country)+'">'+
+        '<td><span class="fw-semibold">'+esc(d.country)+'</span>'+(d.boundary?' <span class="text-warning-emphasis fw-bold" title="boundary case">&dagger;</span>':'')+(d._local?' <span class="badge rounded-pill text-bg-secondary" title="local edit">local</span>':'')+
+          '<br><span class="text-body-secondary small">'+esc(d.region)+'</span></td>'+
+        '<td class="text-end">'+d.R.toFixed(1)+'</td>'+
+        '<td class="text-end">'+d.ICC.toFixed(1)+'</td>'+
+        '<td class="text-end">'+d.CREATE.toFixed(1)+'</td>'+
+        '<td class="text-end">'+d.ED+'</td>'+
+        '<td><span class="badge rounded-pill '+badge(g)+'">'+esc(shortCls(d.cls))+'</span></td>'+
+        '<td class="text-end">'+retCell+'</td></tr>';
+    }).join("");
+    document.querySelectorAll("#tbody tr").forEach(function(tr){
+      tr.addEventListener("click",function(){
+        openDrawer(DATA.filter(function(d){return d.country===tr.getAttribute("data-c");})[0]);
+      });
+    });
+    document.querySelectorAll("#thead th").forEach(function(th){
+      th.querySelector(".ar").textContent = th.getAttribute("data-k")===state.sortk ? (state.dir>0?"▲":"▼") : "";
+    });
+  }
+  document.getElementById("search").addEventListener("input",function(e){state.q=e.target.value;render();});
+  document.getElementById("region").addEventListener("change",function(e){state.region=e.target.value;render();});
+
+  /* offcanvas drawer */
+  var bsDrawer = new bootstrap.Offcanvas(document.getElementById("drawer"));
+  function lvlBar(level){
+    return '<div class="progress lvl-track" style="width:64px" role="progressbar" aria-valuenow="'+level+'" aria-valuemin="0" aria-valuemax="4">'+
+      '<div class="progress-bar bg-secondary" style="width:'+(level/4*100)+'%"></div></div>';
+  }
+  function evBadge(ev){
+    if(!ev) return "";
+    var map={High:"text-bg-success",Medium:"text-bg-warning",Low:"text-bg-danger"};
+    return ' <span class="badge '+map[ev]+'" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="left" '+
+           'data-bs-title="'+esc(ev+" evidence: strength of the public evidence behind this cell.")+'">'+ev[0]+'</span>';
+  }
+  function dimRow(name,level,ev,why){
+    return '<div class="py-2 border-bottom">'+
+      '<div class="d-flex align-items-center gap-2">'+
+      '<span class="flex-grow-1 small fw-medium">'+esc(name)+'</span>'+
+      lvlBar(level)+'<span class="small text-body-secondary" style="width:26px;text-align:right">'+level+'/4</span>'+evBadge(ev)+'</div>'+
+      (why?'<p class="small text-body-secondary mb-0 mt-1">'+why+'</p>':'')+'</div>';
+  }
+  function citeLink(why,cite){
+    var w=esc(why);
+    if(cite) w+=' <a href="'+esc(cite)+'" target="_blank" rel="noopener">source &nearr;</a>';
+    return w;
+  }
+  function metricCard(val,label,infoKey,lo,hi){
+    var ci=(lo!==undefined&&hi!==undefined)?'<div class="small text-body-tertiary" tabindex="0" data-bs-toggle="tooltip" data-bs-title="'+esc(INFO.ci)+'">['+lo+', '+hi+']</div>':'';
+    return '<div class="col-4"><div class="border rounded p-2 h-100"><div class="fs-5 fw-bold">'+val+'</div><div class="small text-body-secondary">'+label+(infoKey?ii(infoKey):'')+'</div>'+ci+'</div></div>';
+  }
+  function grpH(t,infoKey){ return '<h6 class="text-uppercase text-body-secondary small fw-bold mt-4 mb-2">'+t+(infoKey?ii(infoKey):'')+'</h6>'; }
+  function openDrawer(d){
+    if(!d) return;
+    var g=grp(d.cls), typ=d.type||"", gate=d.gate, makerCore=/maker$/.test(d.cls);
+    var db=document.getElementById("drawerBody"), dc=document.getElementById("drawerClass");
+    // clear tooltips from the previously shown country before rebuilding
+    [db,dc].forEach(function(root){root.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(el){
+      var ex=bootstrap.Tooltip.getInstance(el); if(ex) ex.dispose();});});
+    document.getElementById("drawerTitle").innerHTML = esc(d.country)+(d.boundary?' <span class="text-warning-emphasis fw-bold">&dagger;</span>':'');
+    dc.innerHTML =
+      '<span class="badge rounded-pill '+badge(g)+'">'+esc(d.cls)+(typ&&typ!==d.cls?' &middot; '+esc(typ):'')+'</span>'+ii(g)+
+      (d.boundary?' <span class="badge rounded-pill text-bg-light border">boundary'+ii("boundary")+'</span>':'')+
+      ' <span class="text-body-secondary small">'+esc(d.region)+'</span>';
+    var h='';
+    h+='<div class="alert '+(gate?"alert-success":"alert-secondary")+' py-2 small" role="alert">'+
+       '<div class="fw-bold mb-1">'+(gate?'✓ Clears the post-quantum maker gate':'✗ Does not clear the maker gate')+ii("gate")+'</div>'+
+       (gate
+         ? 'Demonstrated indigenous post-quantum capability on a sustained institutional basis'+(typ?', classified as a <strong>'+esc(typ).toLowerCase()+'</strong>':'')+'.'
+         : 'No sustained, institutionally backed post-quantum creation layer reaches the gate. Any classical capacity and governance authority are credited separately and do not qualify.')+
+       '</div>';
+    h+='<div class="row g-2">'+
+       metricCard(d.R.toFixed(1),"readiness","R")+
+       metricCard(d.ICC.toFixed(1),"capacity","ICC",d.ICC_lo,d.ICC_hi)+
+       metricCard(d.CREATE.toFixed(1),"creation","Cr",d.CREATE_lo,d.CREATE_hi)+
+       metricCard(d.ED,"dependency","ED")+
+       metricCard(d.NATCTRL.toFixed(1),"nat. control","natctrl")+
+       metricCard(Math.round(d.retention*100)+"%",makerCore?"maker retained":"non-maker retained","retention")+
+       '</div>';
+    h+=grpH("Indigenous post-quantum control","control");
+    d.B_dims.forEach(function(b){ h+=dimRow(b.name,b.level,b.ev,citeLink(b.why,b.cite)); });
+    var ed=d.ED_detail;
+    h+=grpH("External dependency","ED");
+    h+=dimRow("Post-quantum stack dependency",ed.level,ed.ev,citeLink(ed.why,ed.cite));
+    h+=grpH("Indigenous cryptographic capacity (general)","capacity");
+    d.A_dims.forEach(function(a){ h+=dimRow(a.name,a.level,"",""); });
+    h+=grpH("Readiness","readiness");
+    d.R_dims.forEach(function(r){ h+=dimRow(r.name,r.level,"",""); });
+    db.innerHTML=h;
+    tips(dc); tips(db);
+    bsDrawer.show();
+  }
+
+  /* CSV downloads (standard browser download) */
+  function cell(x){var s=(x===undefined||x===null)?"":String(x);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;}
+  function saveCSV(filename,rows){
+    var lines=rows.map(function(r){return r.map(cell).join(",");});
+    var blob=new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a"); a.href=url; a.download=filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
+  }
+  // summary scores, one row per country
+  document.getElementById("csv").addEventListener("click",function(){
+    var rows=[["country","region","R","ICC","Cr_creation","ED","nat_control","class","type","gate_pass","maker_retention","boundary"]];
+    DATA.forEach(function(d){
+      rows.push([d.country,d.region,d.R,d.ICC,d.CREATE,d.ED,d.NATCTRL,d.cls,d.type,d.gate,d.retention,d.boundary]);
+    });
+    saveCSV("rscm_scores_v2.csv",rows);
+  });
+  // full per-cell worksheet: one row per coded cell, with evidence grade, justification, citation
+  document.getElementById("csvfull").addEventListener("click",function(){
+    var rows=[["country","region","class","type","gate_pass","boundary","maker_retention",
+               "construct","cell","dimension","level","evidence_grade","justification","citation"]];
+    DATA.forEach(function(d){
+      var ctx=[d.country,d.region,d.cls,d.type,d.gate,d.boundary,d.retention];
+      var LEVELONLY="level only, not separately cited";
+      d.R_dims.forEach(function(x,i){ rows.push(ctx.concat(["readiness","R"+(i+1),x.name,x.level,LEVELONLY,"",""])); });
+      d.A_dims.forEach(function(x,i){ rows.push(ctx.concat(["indigenous cryptographic capacity","A"+(i+1),x.name,x.level,LEVELONLY,"",""])); });
+      d.B_dims.forEach(function(b){ rows.push(ctx.concat(["indigenous post-quantum control",b.key,b.name,b.level,b.ev,b.why,b.cite])); });
+      var ed=d.ED_detail;
+      rows.push(ctx.concat(["external dependency","ED","Post-quantum stack dependency",ed.level,ed.ev,ed.why,ed.cite]));
+    });
+    saveCSV("rscm_worksheet_v2.csv",rows);
+  });
+
+  /* ---- local dataset: download the full DB as JSON, upload updates, reset (browser-only) ---- */
+  function currentDB(){ return {meta: META, countries: DATA}; }
+  function downloadJSON(){
+    var blob=new Blob([JSON.stringify(currentDB(),null,1)],{type:"application/json"});
+    var url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download="rscm_database_"+(META.generated||"latest")+".json";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
+  }
+  function updateLocalBar(){
+    var n=Object.keys(loadOverrides()).length;
+    var lc=document.getElementById("localcount"); if(lc) lc.textContent=n;
+    var b=document.getElementById("editbadge"); if(b){ b.textContent=n; b.hidden = n===0; }
+  }
+  function refreshAll(){ applyData(); renderStats(); populateRegions(); drawPlane(); render(); updateLocalBar(); }
+  function ingest(records){
+    if(!Array.isArray(records)) records=[records];
+    var ov=loadOverrides(), added=0, updated=0, bad=0, names={};
+    ORIGINAL.forEach(function(d){names[d.country]=1;});
+    Object.keys(ov).forEach(function(k){names[k]=1;});
+    records.forEach(function(r){
+      if(!r || !String(r.country||"").trim()){ bad++; return; }
+      var rec=computeDerived(r);
+      if(names[rec.country]) updated++; else { added++; names[rec.country]=1; }
+      ov[rec.country]=rec;
+    });
+    saveOverrides(ov); refreshAll();
+    return {added:added, updated:updated, bad:bad};
+  }
+  function saveJSON(filename, obj){
+    var blob=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"});
+    var url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download=filename; document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a); URL.revokeObjectURL(url);},120);
+  }
+  function downloadTemplate(){
+    saveJSON("rscm_upload_template.json", {
+      "_readme": "RSCM upload template. Put one object per country under 'countries'. You provide the coded "+
+        "LEVELS (integers 0-4) and the sources; the tool re-scores each entry by the RSCM rules and computes "+
+        "R, ICC, Cr, ED, class, type, boundary, and retention, so do NOT fill those. 'ev' (evidence grade) is "+
+        "\"High\", \"Medium\", or \"Low\". Set 'isolated' to true only for a lone, non-institutional academic "+
+        "result (it then cannot clear the maker gate). Uploading updates a country if the name already exists, "+
+        "or adds it if new; changes are saved in your browser only.",
+      "countries": [{
+        "country": "Example Country",
+        "region": "Asia",
+        "isolated": false,
+        "R_dims": [
+          {"name":"Strategy & mandate","level":2},{"name":"Inventory","level":1},
+          {"name":"Standards adoption","level":2},{"name":"Deployment","level":1},{"name":"Workforce","level":2}],
+        "A_dims": [
+          {"name":"Algorithmic research & authorship","level":2},{"name":"Vendor & supply chain","level":2},
+          {"name":"Infrastructure operation","level":2},{"name":"Governance & standards","level":2},
+          {"name":"Research & talent base","level":2}],
+        "B_dims": [
+          {"key":"B1","name":"Indigenous PQC primitive","level":1,"ev":"Medium","why":"what the evidence shows","cite":"https://source.example"},
+          {"key":"B2","name":"PQC implementation","level":2,"ev":"Medium","why":"...","cite":"https://source.example"},
+          {"key":"B3","name":"PQC validation","level":1,"ev":"Low","why":"...","cite":"https://source.example"},
+          {"key":"B4","name":"National PQC integration","level":1,"ev":"Low","why":"...","cite":"https://source.example"},
+          {"key":"B5","name":"PQC replaceability","level":1,"ev":"Low","why":"...","cite":"https://source.example"}],
+        "ED_detail": {"level":3,"ev":"Medium","why":"...","cite":"https://source.example"}
+      }]
+    });
+  }
+  document.getElementById("dltemplate").addEventListener("click", downloadTemplate);
+  document.getElementById("dljson").addEventListener("click", downloadJSON);
+  document.getElementById("upload").addEventListener("change", function(e){
+    var f=e.target.files && e.target.files[0], msg=document.getElementById("localmsg"); if(!f) return;
+    var rd=new FileReader();
+    rd.onload=function(){
+      try{
+        var data=JSON.parse(rd.result), recs=data.countries||data, res=ingest(recs);
+        msg.className="small mt-2 text-success";
+        msg.textContent="Added "+res.added+", updated "+res.updated+
+          (res.bad?(", skipped "+res.bad+" without a country name"):"")+". Saved in this browser only.";
+      }catch(err){
+        msg.className="small mt-2 text-danger";
+        msg.textContent="Could not read the file ("+err.message+"). Expect JSON in the downloaded-database shape.";
+      }
+      e.target.value="";
+    };
+    rd.readAsText(f);
+  });
+  function resetLocal(){ try{ localStorage.removeItem(LS_KEY); }catch(e){} var m=document.getElementById("localmsg"); if(m) m.textContent=""; refreshAll(); }
+
+  /* settings: theme options */
+  function setTheme(t){ document.documentElement.setAttribute("data-bs-theme", t); drawPlane(); }
+  document.querySelectorAll(".theme-opt").forEach(function(el){
+    el.addEventListener("click", function(){ setTheme(el.getAttribute("data-theme")); });
+  });
+  var r2=document.getElementById("resetlocal2"); if(r2) r2.addEventListener("click", resetLocal);
+
+  // wire the static info icons in the page markup from the same glossary
+  document.querySelectorAll("[data-info]").forEach(function(el){
+    var t=INFO[el.getAttribute("data-info")]; if(!t) return;
+    el.setAttribute("tabindex","0");
+    el.setAttribute("role","button");
+    el.setAttribute("aria-label","explain");
+    el.setAttribute("data-bs-toggle","tooltip");
+    el.setAttribute("data-bs-placement","top");
+    el.setAttribute("data-bs-title",t);
+  });
+  tips(document);
+
+  var VERSION="1.0";
+  function setById(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+  var when = META.generated || "n/a";
+  setById("gendate", when);
+  setById("aboutver", VERSION);
+  setById("aboutdate", when);
+  setById("aboutn", ORIGINAL.length);
+  setById("verline", "v"+VERSION+"  ·  data "+when);
+  drawPlane();
+  render();
+  updateLocalBar();
+})();
+</script>
+</body>
+</html>
