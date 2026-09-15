@@ -110,7 +110,7 @@
 
   <div class="card mb-4">
     <div class="card-body">
-      <h2 class="h5 card-title">All fifty-seven countries</h2>
+      <h2 class="h5 card-title" id="tblHeading">All countries</h2>
       <p class="card-text text-body-secondary small" style="text-align:justify">Readiness R, indigenous
         cryptographic capacity ICC, indigenous post-quantum creation Cr, external dependency ED, class, and the
         share of bootstrap re-codings that keep the maker verdict. A dagger marks a boundary case. Sort any
@@ -416,6 +416,7 @@
         '</div></div></div>';
     }).join("");
     tips(document.getElementById("stats"));
+    var th=document.getElementById("tblHeading"); if(th) th.textContent="All "+DATA.length+" countries";
   }
   renderStats();
 

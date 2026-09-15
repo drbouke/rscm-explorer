@@ -1,6 +1,6 @@
 # RSCM Explorer
 
-An interactive explorer of post-quantum cryptographic sovereignty across 57 countries. It
+An interactive explorer of post-quantum cryptographic sovereignty across countries. It
 decomposes sovereignty into three distinct constructs, indigenous cryptographic capacity (ICC),
 indigenous post-quantum control, and external dependency (ED), and certifies a country as a
 post-quantum maker only through a strict gate of demonstrated, institutionally sustained
