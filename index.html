@@ -32,7 +32,8 @@
 <nav class="navbar bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 fw-bold">RSCM Explorer</span>
-    <span class="navbar-text small d-none d-md-inline me-auto ms-2">Readiness&ndash;Sovereignty Capability Model</span>
+    <span class="navbar-text small d-none d-md-inline ms-2">Readiness&ndash;Sovereignty Capability Model</span>
+    <span class="navbar-text small text-body-tertiary d-none d-lg-inline ms-3 me-auto" id="verline"></span>
     <div class="dropdown">
       <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Settings<span id="editbadge" class="badge rounded-pill text-bg-warning ms-1" hidden>0</span>
@@ -214,6 +215,28 @@
           <li><strong>Indigenous post-quantum control</strong> &ndash; the quantum-safe layer only, gated for the maker label.</li>
           <li><strong>External dependency (ED)</strong> &ndash; how much of the deployed stack is foreign-supplied.</li>
         </ul>
+
+        <h3 class="h6 fw-bold mt-4">Version and data</h3>
+        <ul class="list-unstyled small text-body-secondary mb-0">
+          <li>Explorer version: <strong><span id="aboutver"></span></strong></li>
+          <li>Dataset last updated: <strong><span id="aboutdate"></span></strong></li>
+          <li>Assessed countries: <strong><span id="aboutn"></span></strong></li>
+        </ul>
+
+        <h3 class="h6 fw-bold mt-4">Maintainer and citation</h3>
+        <p class="text-body-secondary small mb-2">Mohamed Aly Bouke
+          (<a href="https://orcid.org/0000-0003-3264-601X" target="_blank" rel="noopener">ORCID 0000-0003-3264-601X</a>),
+          Multimedia University. Please cite the RSCM paper when you use these scores.</p>
+
+        <h3 class="h6 fw-bold mt-3">Contributing an update</h3>
+        <p class="text-body-secondary small mb-0" style="text-align:justify">Anyone can propose a correction, an
+          updated country, or a new one. In the <strong>Data &amp; extend</strong> tab, download the template,
+          fill it following the codebook (a level 0&ndash;4, an evidence grade, a justification, and a source for
+          every cell), and upload it to preview how the rules score it. To have a change reviewed for the
+          published dataset, open an issue or pull request on the project repository at
+          <a href="https://github.com/drbouke/rscm-explorer" target="_blank" rel="noopener">github.com/drbouke/rscm-explorer</a>,
+          or contact the maintainer at <a href="mailto:bouke@ieee.org">bouke@ieee.org</a> with the filled template
+          attached. Every proposed cell must carry a public, citable source.</p>
       </div>
     </div>
   </div><!-- /tab-about -->
@@ -789,7 +812,14 @@
   });
   tips(document);
 
-  var gd=document.getElementById("gendate"); if(gd) gd.textContent = META.generated || "n/a";
+  var VERSION="1.0";
+  function setById(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+  var when = META.generated || "n/a";
+  setById("gendate", when);
+  setById("aboutver", VERSION);
+  setById("aboutdate", when);
+  setById("aboutn", ORIGINAL.length);
+  setById("verline", "v"+VERSION+"  ·  data "+when);
   drawPlane();
   render();
   updateLocalBar();
