@@ -1,0 +1,65 @@
+name: Dataset update or new country
+description: Propose a correction, an updated country, or a new country for the RSCM Explorer dataset.
+title: "[data] <country>: <short summary>"
+labels: ["dataset"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. Every proposed level must carry a public, citable source.
+        Use the **Download template** button in the Explorer's *Data & extend* tab to prepare a valid
+        JSON entry, then upload it there first to preview how the rules score it before submitting here.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      placeholder: e.g. Kenya
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Change type
+      options:
+        - New country
+        - Update to an existing country
+        - Correction to a single cell
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Continent
+      options:
+        - Africa
+        - Asia
+        - Europe
+        - North America
+        - South America
+        - Oceania
+    validations:
+      required: true
+  - type: textarea
+    id: json
+    attributes:
+      label: Filled template (JSON)
+      description: Paste the country object from the downloaded template, with a level 0-4, evidence grade, why, and cite for each cell.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Key public sources
+      description: List the primary public sources (URLs) supporting the coded levels.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: Every proposed level is backed by a public, citable source.
+          required: true
+        - label: I followed the codebook levels (0-4) and evidence grades (High / Medium / Low).
+          required: true

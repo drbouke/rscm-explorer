@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Email the maintainer
+    url: https://orcid.org/0000-0003-3264-601X
+    about: Prefer not to open an issue? Reach the maintainer via ORCID, or email the filled template to bouke@ieee.org.
