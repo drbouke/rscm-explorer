@@ -34,6 +34,7 @@
     <span class="navbar-brand mb-0 h1 fw-bold">RSCM Explorer</span>
     <span class="navbar-text small d-none d-md-inline ms-2">Readiness&ndash;Sovereignty Capability Model</span>
     <span class="navbar-text small text-body-tertiary d-none d-lg-inline ms-3 me-auto" id="verline"></span>
+    <a class="btn btn-sm btn-outline-primary ms-auto me-2" href="https://arxiv.org/abs/2609.18477" target="_blank" rel="noopener">Paper</a>
     <div class="dropdown">
       <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Settings<span id="editbadge" class="badge rounded-pill text-bg-warning ms-1" hidden>0</span>
@@ -201,7 +202,8 @@
         <p class="text-body-secondary small">RSCM decomposes cryptographic sovereignty into three distinct
           constructs, indigenous cryptographic capacity, indigenous post-quantum control, and external
           dependency, and certifies a country as a post-quantum maker only by a strict gate of demonstrated,
-          institutionally sustained capability. This page is the companion to the RSCM paper.</p>
+          institutionally sustained capability. This page is the companion to the
+          <a href="https://arxiv.org/abs/2609.18477" target="_blank" rel="noopener">RSCM paper (arXiv:2609.18477)</a>.</p>
         <h3 class="h6 fw-bold mt-3">How it works</h3>
         <p class="text-body-secondary small mb-2">The assessment is produced in two stages. Human coders score
           each country against a fixed codebook from cited public evidence, recording a level (0&ndash;4), an
@@ -227,6 +229,18 @@
         <p class="text-body-secondary small mb-2">Mohamed Aly Bouke
           (<a href="https://orcid.org/0000-0003-3264-601X" target="_blank" rel="noopener">ORCID 0000-0003-3264-601X</a>),
           Multimedia University. Please cite the RSCM paper when you use these scores.</p>
+        <p class="text-body-secondary small mb-2">M. A. Bouke, &ldquo;A Global Readiness and Sovereignty Capability
+          Model for Post-Quantum Cryptography Migration,&rdquo; arXiv:2609.18477, 2026.
+          <a href="https://doi.org/10.48550/arXiv.2609.18477" target="_blank" rel="noopener">https://doi.org/10.48550/arXiv.2609.18477</a></p>
+<pre class="small bg-body-tertiary border rounded-2 p-2 mb-2" style="white-space:pre-wrap">@misc{bouke2026globalreadinesssovereigntycapability,
+  title={A Global Readiness and Sovereignty Capability Model for Post-Quantum Cryptography Migration},
+  author={Mohamed Aly Bouke},
+  year={2026},
+  eprint={2609.18477},
+  archivePrefix={arXiv},
+  primaryClass={cs.CR},
+  url={https://arxiv.org/abs/2609.18477}
+}</pre>
 
         <h3 class="h6 fw-bold mt-3">Contributing an update</h3>
         <p class="text-body-secondary small mb-0" style="text-align:justify">Anyone can propose a correction, an
@@ -814,7 +828,7 @@
   });
   tips(document);
 
-  var VERSION="1.0";
+  var VERSION="1.1";
   function setById(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
   var when = META.generated || "n/a";
   setById("gendate", when);

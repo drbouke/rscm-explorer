@@ -4,7 +4,7 @@ An interactive explorer of post-quantum cryptographic sovereignty across countri
 decomposes sovereignty into three distinct constructs, indigenous cryptographic capacity (ICC),
 indigenous post-quantum control, and external dependency (ED), and certifies a country as a
 post-quantum maker only through a strict gate of demonstrated, institutionally sustained
-capability. Companion to the RSCM paper.
+capability. Companion to the RSCM paper ([arXiv:2609.18477](https://arxiv.org/abs/2609.18477)).
 
 Live: https://drbouke.github.io/rscm-explorer/
 
@@ -53,7 +53,22 @@ template and its sources. Every proposed level must carry a public, citable sour
 
 ## Citation
 
-If you use these scores, please cite the RSCM paper (see the paper for the full reference).
+If you use these scores, please cite the RSCM paper:
+
+M. A. Bouke, "A Global Readiness and Sovereignty Capability Model for Post-Quantum Cryptography
+Migration," arXiv:2609.18477, 2026. https://doi.org/10.48550/arXiv.2609.18477
+
+```bibtex
+@misc{bouke2026globalreadinesssovereigntycapability,
+  title={A Global Readiness and Sovereignty Capability Model for Post-Quantum Cryptography Migration},
+  author={Mohamed Aly Bouke},
+  year={2026},
+  eprint={2609.18477},
+  archivePrefix={arXiv},
+  primaryClass={cs.CR},
+  url={https://arxiv.org/abs/2609.18477}
+}
+```
 
 ## License
 
