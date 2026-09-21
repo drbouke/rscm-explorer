@@ -25,6 +25,7 @@ src/
   build.py            Inlines vendor/ and data.json into index.html
   vendor/             Pinned Bootstrap 5.3.3, D3 7.9.0, topojson-client 3.1.0, world-atlas 2.0.2 (countries-110m.json)
 .github/ISSUE_TEMPLATE Dataset-update issue form
+releases/<date>/      Frozen dataset snapshots (data.json, gate_reliability.md)
 ```
 
 ## Build
@@ -47,13 +48,20 @@ evidence; the maker gate requires level 3 on at least one creation layer (design
 or validation) on a sustained institutional basis. The exact field format is documented in the
 Explorer's *Data & extend* tab under *Format guide*.
 
+## Releases
+
+The dataset is published as dated snapshots every six months, each with a blind second coding of
+the maker-gate cells and a frozen copy under `releases/<date>/`. See `RELEASES.md` and
+`CHANGELOG.md`.
+
 ## Extending the dataset
 
 The Explorer lets anyone download the dataset or a template, add or update countries with their
 coded levels and sources, and upload the file to preview how the rules score it, entirely in the
 browser (nothing is uploaded). To propose a change for the published dataset, open a
 [dataset-update issue](https://github.com/drbouke/rscm-explorer/issues/new/choose) with the filled
-template and its sources. Every proposed level must carry a public, citable source.
+template and its sources. Every proposed level must carry a public, citable source; the review
+protocol and contributor credit are described in `CONTRIBUTING.md`.
 
 ## Citation
 

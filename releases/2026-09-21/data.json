@@ -1,0 +1,6343 @@
+{
+ "meta": {
+  "n": 57,
+  "counts": {
+   "Capable, PQC-dependent": 10,
+   "Dependent": 25,
+   "Full-stack maker": 16,
+   "Ready adopter": 1,
+   "Research maker": 5
+  },
+  "mean_retention": 0.962,
+  "generated": "2026-09-21"
+ },
+ "countries": [
+  {
+   "country": "Estonia",
+   "region": "Europe",
+   "R": 2.4,
+   "ICC": 2.8,
+   "CREATE": 1.67,
+   "IPC": 2.0,
+   "NATCTRL": 2.5,
+   "ED": 3,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 0.532,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 1.0,
+   "CREATE_hi": 2.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Domestic academic PQC research (Cybernetica and University of Tartu study quantum-safe crypto); no indigenous primitive.",
+     "cite": "https://cyber.ee/resources/news/cybernetica-and-university-of-tartu-cooperate-to-study-quantum-safe-cryptography/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Domestic products implement standard PQC schemes (Cybernetica UXP, SplitKey, Sharemind moving to PQC).",
+     "cite": "https://cyber.ee/resources/news/estonia-pqc-transition/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Low",
+     "why": "National PQC migration study and obstacle analysis for e-Estonia (CCDCOE work); no formal national certification program.",
+     "cite": "https://ccdcoe.org/uploads/2024/05/CyCon_2024_Vakarjuk_Snetkov_Laud-1.pdf"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "the national roadmap (30.04.2026) tailors the EU schedule into Estonian priority categories, names a central coordinator (JDM or RIA), a PQC round table by Q2 2026, and lists legal acts to amend; issued but not yet enforced, so 3 holds.",
+     "cite": "https://www.justdigi.ee/sites/default/files/documents/2026-05/2026_ROAD2PQ_final_report__avalik_v1.0.pdf"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Documented agility on the foreign stack as national digital-identity and X-Road products move toward PQC.",
+     "cite": "https://cyber.ee/resources/news/estonia-pqc-transition/"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Standardized primitives are foreign, offset by strong domestic integration and national migration capacity.",
+    "cite": "https://cyber.ee/resources/news/estonia-pqc-transition/"
+   }
+  },
+  {
+   "country": "Argentina",
+   "region": "South America",
+   "R": 0.8,
+   "ICC": 2.2,
+   "CREATE": 1.67,
+   "IPC": 2.0,
+   "NATCTRL": 2.5,
+   "ED": 2,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 0.451,
+   "ICC_lo": 1.8,
+   "ICC_hi": 2.8,
+   "CREATE_lo": 1.0,
+   "CREATE_hi": 2.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 2,
+     "ev": "Low",
+     "why": "ARSAT/INVAP CryptoComm (Hugo Scolnik) claims original post-quantum algorithms, but proprietary, undisclosed, unpublished and never internationally submitted or cryptanalyzed",
+     "cite": "https://www.arsat.com.ar/arsat-desarrollo-cryptocomm-un-sistema-de-seguridad-criptografica-post-cuantica/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Low",
+     "why": "ARSAT/INVAP have genuine domestic crypto software and hardware production capability, but the only claimed PQC deployment is the proprietary, undisclosed CryptoComm scheme, so no publicly verifiable PQC-specific implementation of a disclosed scheme is evidenced",
+     "cite": "https://www.arsat.com.ar/arsat-desarrollo-cryptocomm-un-sistema-de-seguridad-criptografica-post-cuantica/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Only internal/self assurance; no public cryptanalysis or independent national validation of the proprietary scheme",
+     "cite": "https://revistafibra.info/arsat-desarrollo-cryptocomm-un-sistema-de-seguridad-criptografica-post-cuantica/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Low",
+     "why": "State-built sovereign system deployed by ARSAT sets its own approach, but no formal national PQC migration profile/mandate",
+     "cite": "https://dplnews.com/argentina-arsat-presenta-sistema-de-seguridad-criptografica-post-cuantica-cryptocomm/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Low",
+     "why": "State ownership of a domestic implementation gives replaceability/control over its stack",
+     "cite": "https://dplnews.com/argentina-arsat-presenta-sistema-de-seguridad-criptografica-post-cuantica-cryptocomm/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Reduced foreign dependency through a sovereign domestic system, though assurance is poor and primitive family undisclosed",
+    "cite": "https://www.arsat.com.ar/arsat-desarrollo-cryptocomm-un-sistema-de-seguridad-criptografica-post-cuantica/"
+   }
+  },
+  {
+   "country": "Israel",
+   "region": "Asia",
+   "R": 2.6,
+   "ICC": 3.4,
+   "CREATE": 1.33,
+   "IPC": 1.6,
+   "NATCTRL": 2.0,
+   "ED": 3,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 0.795,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 0.67,
+   "CREATE_hi": 2.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Strong academic lattice/PQC research and cryptanalysis on foreign schemes; no prominent indigenous PQC candidate submitted to an international process.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Israel Innovation Authority-backed Post-Quantum Communications Consortium (Allot, Elta, RAD, Ceragon, Gilat, NVIDIA + six universities) launched 18 Aug 2026 to develop PQC/QKD/hybrid network tech; domestic implementation capacity, not yet hardened products.",
+     "cite": "https://www.globenewswire.com/news-release/2026/08/18/3346659/0/en/allot-leads-industry-and-academic-partners-to-launch-post-quantum-communications-consortium.html"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic analysis strong, but national PQC assurance leans on foreign standards.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Low",
+     "why": "Regulators (e.g. financial supervisor) require PQC transition plans, tailoring a national adoption profile.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Low",
+     "why": "Documented crypto-agility on a foreign PQC stack with domestic implementation depth.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Foreign PQC primitives with capable domestic implementation offsetting some dependence.",
+    "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+   }
+  },
+  {
+   "country": "India",
+   "region": "Asia",
+   "R": 2.4,
+   "ICC": 2.2,
+   "CREATE": 1.33,
+   "IPC": 1.6,
+   "NATCTRL": 2.0,
+   "ED": 3,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 0.798,
+   "ICC_lo": 1.8,
+   "ICC_hi": 2.6,
+   "CREATE_lo": 0.67,
+   "CREATE_hi": 2.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Domestic PQC research and C-DOT quantum-safe products using standard schemes; no indigenous PQC primitive submitted internationally.",
+     "cite": "https://postquantum.com/security-pqc/indias-quantum-safe-roadmap/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "C-DOT indigenously developed a quantum-safe encryptor implementing standard PQC algorithms.",
+     "cite": "https://postquantum.com/security-pqc/indias-quantum-safe-roadmap/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic analysis and workshops; national PQC assurance still largely relies on foreign standards.",
+     "cite": "https://iciss.isrdc.in/2024/?page_id=2518"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "High",
+     "why": "report tailors a national profile (preferential market access for indigenous quantum-safe products, L4 assurance with indigenous algorithms, TEC-defined Indian PQC standards); not yet enforced, so stays 2.",
+     "cite": "https://dst.gov.in/sites/default/files/Report_TaskForce_PQMigration_4Feb26%20(v1).pdf"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Low",
+     "why": "Documented crypto-agility with some domestic implementation on an otherwise foreign stack.",
+     "cite": "https://postquantum.com/security-pqc/indias-quantum-safe-roadmap/"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Predominantly foreign PQC primitives and hardware, offset by some domestic implementation.",
+    "cite": "https://postquantum.com/security-pqc/indias-quantum-safe-roadmap/"
+   }
+  },
+  {
+   "country": "Mexico",
+   "region": "North America",
+   "R": 0.6,
+   "ICC": 2.0,
+   "CREATE": 1.33,
+   "IPC": 1.2,
+   "NATCTRL": 1.0,
+   "ED": 3,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 0.679,
+   "ICC_lo": 1.6,
+   "ICC_hi": 2.6,
+   "CREATE_lo": 0.67,
+   "CREATE_hi": 2.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Domestic academic PQC research at CINVESTAV (Rodriguez-Henriquez) analyzing NIST candidates; no indigenous primitive submitted internationally.",
+     "cite": "https://www.researchgate.net/scientific-contributions/Francisco-Rodriguez-Henriquez-2034318379"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Low",
+     "why": "Domestic implementation of standard schemes explored for national use (post-quantum signatures for Mexican digital invoices, CFDI).",
+     "cite": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-55462021000400729"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Evidence limited to academic evaluation of NIST round-3 signature candidates; no national PQC evaluation program.",
+     "cite": "https://www.researchgate.net/scientific-contributions/Francisco-Rodriguez-Henriquez-2034318379"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 1,
+     "ev": "Low",
+     "why": "Migration studies for national systems adopt NIST candidates as-is; no tailored national profile issued.",
+     "cite": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-55462021000400729"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 1,
+     "ev": "Low",
+     "why": "Research capacity present but no documented crypto-agility framework on a deployed stack.",
+     "cite": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-55462021000400729"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Foreign standardized primitives and profiles, offset by some domestic implementation and analysis capacity.",
+    "cite": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-55462021000400729"
+   }
+  },
+  {
+   "country": "Iran",
+   "region": "Asia",
+   "R": 0.8,
+   "ICC": 2.4,
+   "CREATE": 1.0,
+   "IPC": 0.8,
+   "NATCTRL": 0.5,
+   "ED": 4,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.8,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "Activity limited to domestic academic lattice-based PQC research (Sharif University); no national PQC call or internationally submitted national primitive found.",
+     "cite": "https://scientiairanica.sharif.edu/?_action=xml&article=21044"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 1,
+     "ev": "Low",
+     "why": "PQC work confined to academic software re-implementations of foreign schemes; no hardened or production national implementation.",
+     "cite": "https://scientiairanica.sharif.edu/?_action=xml&article=21044"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Evidence limited to academic cryptanalysis of lattice schemes; no national PQC evaluation or certification program found.",
+     "cite": "https://scientiairanica.sharif.edu/?_action=xml&article=21044"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public evidence of a national Iranian PQC migration profile, schedule, or policy; effectively follows external developments.",
+     "cite": "https://csrc.nist.gov/projects/post-quantum-cryptography"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 1,
+     "ev": "Low",
+     "why": "Some domestic academic capacity but no documented crypto-agility framework on a deployed PQC stack.",
+     "cite": "https://scientiairanica.sharif.edu/?_action=xml&article=21044"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "No indigenous standardized PQC stack; primitives, standards, and sanction-constrained tooling are foreign-origin.",
+    "cite": "https://scientiairanica.sharif.edu/?_action=xml&article=21044"
+   }
+  },
+  {
+   "country": "Pakistan",
+   "region": "Asia",
+   "R": 0.8,
+   "ICC": 2.0,
+   "CREATE": 1.0,
+   "IPC": 0.6,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.6,
+   "ICC_hi": 2.6,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "NUST/Air University research applies foreign ML-KEM/ML-DSA in IoT protocols; no indigenous PQC primitive designed",
+     "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic prototypes wrap foreign PQC libraries on commodity hardware; no domestic implementation product",
+     "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic-level PQC analysis only; no national PQC evaluation activity found",
+     "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile, call, or roadmap found",
+     "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national crypto-agility posture; dependent on foreign fixes",
+     "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "Fully dependent on foreign (NIST) PQC algorithms and libraries",
+    "cite": "https://www.nature.com/articles/s41598-025-28413-8"
+   }
+  },
+  {
+   "country": "Qatar",
+   "region": "Asia",
+   "R": 1.8,
+   "ICC": 2.0,
+   "CREATE": 1.0,
+   "IPC": 0.8,
+   "NATCTRL": 0.5,
+   "ED": 4,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.4,
+   "ICC_hi": 2.6,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "QCRI/HBKU research optimizes the foreign HQC scheme (OptHQC); no indigenous PQC primitive designed",
+     "cite": "https://arxiv.org/pdf/2512.12904"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Performance optimization of a standard scheme; no domestic PQC library/hardware product",
+     "cite": "https://arxiv.org/pdf/2512.12904"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "iGA and Qatar Central Bank reportedly evaluating PQC guidelines; only vendor-reported, no formal national program",
+     "cite": "https://emudhra.com/en/blog/quantum-ready-key-management-for-qatar-enterprises"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 1,
+     "ev": "Low",
+     "why": "Regulatory interest in adopting foreign PQC profiles; no national migration standard/roadmap published",
+     "cite": "https://emudhra.com/en/blog/quantum-ready-key-management-for-qatar-enterprises"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented national crypto-agility posture",
+     "cite": "https://cs.qcri.org/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "Complete reliance on NIST/ETSI PQC standards and implementations",
+    "cite": "https://cs.qcri.org/"
+   }
+  },
+  {
+   "country": "Saudi Arabia",
+   "region": "Asia",
+   "R": 1.8,
+   "ICC": 2.4,
+   "CREATE": 0.67,
+   "IPC": 0.8,
+   "NATCTRL": 1.0,
+   "ED": 4,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.8,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "No indigenous PQC primitive; KACST/NCQT began a foreign-partner-led (Pasqal) program to design quantum-safe algorithms, nascent",
+     "cite": "https://thequantuminsider.com/2026/08/31/pasqal-kacst-quantum-research-saudi-arabia/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation found",
+     "cite": "https://thequantuminsider.com/2026/08/31/pasqal-kacst-quantum-research-saudi-arabia/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Early institutional research; no national PQC evaluation/certification program",
+     "cite": "https://quantumcomputingreport.com/pasqal-and-kacst-partner-to-advance-post-quantum-cryptography-in-saudi-arabia/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Low",
+     "why": "NCA National Cryptographic Standards address PQC as an appendix topic; partial national profile, no full migration mandate visible",
+     "cite": "https://nca.gov.sa/en/regulatory-documents/frameworks-and-standard-list/ncs/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "Crypto-agility posture immature; no national agility program",
+     "cite": "https://nca.gov.sa/en/regulatory-documents/frameworks-and-standard-list/ncs/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "Heavy dependency on foreign partners (Pasqal) and NIST algorithms",
+    "cite": "https://thequantuminsider.com/2026/08/31/pasqal-kacst-quantum-research-saudi-arabia/"
+   }
+  },
+  {
+   "country": "Ethiopia",
+   "region": "Africa",
+   "R": 0.8,
+   "ICC": 2.4,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Capable, PQC-dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 2.0,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public PQC-specific evidence of indigenous design or national research",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation found; imports only",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation activity; foreign assurance",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; follows foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "PQC stack fully foreign; no public domestic PQC activity",
+    "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+   }
+  },
+  {
+   "country": "Senegal",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 1.6,
+   "CREATE": 2.0,
+   "IPC": 1.2,
+   "NATCTRL": 0.0,
+   "ED": 3,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.0,
+   "CREATE_lo": 1.33,
+   "CREATE_hi": 2.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 1
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Senegalese nationals (UCAD Dakar LACGAA) co-designed DAGS, a code-based KEM submitted to NIST PQC Round 1",
+     "cite": "https://eprint.iacr.org/2017/1037"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Low",
+     "why": "Domestic reference/software implementation of their indigenous DAGS scheme; not a hardened or general PQC library",
+     "cite": "https://www.dags-project.org/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic analysis/revision (DAGS Reloaded after cryptanalysis); no national evaluation program",
+     "cite": "https://eprint.iacr.org/2018/1203"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; follows foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented national PQC crypto-agility policy despite design capability",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Genuine design/implementation capability at one lab, but no national PQC deployment stack; still largely dependent",
+    "cite": "https://eprint.iacr.org/2017/1037"
+   }
+  },
+  {
+   "country": "Iraq",
+   "region": "Asia",
+   "R": 0.6,
+   "ICC": 1.8,
+   "CREATE": 0.67,
+   "IPC": 0.4,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.4,
+   "ICC_hi": 2.4,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Iraqi university (Univ. of Babylon) academic review of lightweight PQC for IoT on foreign schemes (Kyber/NTRU); no indigenous design",
+     "cite": "https://etasr.com/index.php/ETASR/article/view/10141"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation or national crypto library",
+     "cite": "https://etasr.com/index.php/ETASR/article/view/10141"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic PQC analysis only; no national evaluation program",
+     "cite": "https://etasr.com/index.php/ETASR/article/view/10141"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; would follow foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; only academic engagement",
+    "cite": "https://etasr.com/index.php/ETASR/article/view/10141"
+   }
+  },
+  {
+   "country": "Tunisia",
+   "region": "Africa",
+   "R": 1.0,
+   "ICC": 1.6,
+   "CREATE": 0.67,
+   "IPC": 0.4,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.0,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "Strong cryptology community (hosts AfricaCrypt, PQC summer school, military research center) analyzing foreign schemes; no indigenous NIST-track primitive",
+     "cite": "https://link.springer.com/book/10.1007/978-3-031-37679-5"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic PQC analysis via a strong cryptology community; no national evaluation/certification program",
+     "cite": "https://link.springer.com/book/10.1007/978-3-032-31130-6"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No ANSI or government PQC migration roadmap found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national crypto-agility posture articulated",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Total reliance on foreign (NIST/ETSI) PQC standards",
+    "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+   }
+  },
+  {
+   "country": "Jordan",
+   "region": "Asia",
+   "R": 1.2,
+   "ICC": 1.6,
+   "CREATE": 0.67,
+   "IPC": 0.4,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.0,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Jordanian university (ASU Amman) academic work on quantum-resistant schemes; no indigenous PQC design",
+     "cite": "https://thesai.org/Downloads/Volume16No4/Paper_62-Designing_Quantum_Resilient_Blockchain_Frameworks.pdf"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation or national crypto library; imports standardized foreign schemes",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic-level PQC analysis only; no national PQC evaluation or certification program",
+     "cite": "https://thesai.org/Downloads/Volume16No4/Paper_62-Designing_Quantum_Resilient_Blockchain_Frameworks.pdf"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; would follow foreign (NIST) schedule",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility policy for PQC; depends on foreign fixes",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; only academic engagement domestically",
+    "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+   }
+  },
+  {
+   "country": "Lebanon",
+   "region": "Asia",
+   "R": 0.8,
+   "ICC": 1.6,
+   "CREATE": 0.67,
+   "IPC": 0.4,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.0,
+   "ICC_hi": 2.2,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 1
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Lebanese authors (Beirut Arab Univ., AUB) publish PQC migration-framework analysis on foreign schemes; no indigenous design",
+     "cite": "https://www.researchgate.net/publication/399393461_Institutional_Approaches_to_Post-Quantum_Cryptography_A_Comparative_Analysis_of_Migration_Frameworks"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation or national crypto library",
+     "cite": "https://www.researchgate.net/publication/399393461_Institutional_Approaches_to_Post-Quantum_Cryptography_A_Comparative_Analysis_of_Migration_Frameworks"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic PQC analysis only; no national evaluation program",
+     "cite": "https://www.researchgate.net/publication/399393461_Institutional_Approaches_to_Post-Quantum_Cryptography_A_Comparative_Analysis_of_Migration_Frameworks"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; would follow foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; only academic engagement",
+    "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+   }
+  },
+  {
+   "country": "South Africa",
+   "region": "Africa",
+   "R": 1.2,
+   "ICC": 1.6,
+   "CREATE": 0.67,
+   "IPC": 0.4,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.0,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 1
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Medium",
+     "why": "University applied/evaluation PQC research on standardized foreign schemes (e.g. EHR study); no indigenous scheme; quantum work is mostly QKD (not PQC)",
+     "cite": "https://journal-isi.org/index.php/isi/article/view/1423"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation or national crypto library; groups test NIST schemes",
+     "cite": "https://www.telecomreviewafrica.com/articles/features/12433-rainbow-nation-to-quantum-nation-south-african-telecoms-quantum-safe-cryptography-era/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic PQC evaluation only; no national PQC testing or certification program",
+     "cite": "https://journal-isi.org/index.php/isi/article/view/1423"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Medium",
+     "why": "No national PQC migration profile; commentary notes SA still needs a national quantum-defense strategy",
+     "cite": "https://techcentral.co.za/south-africa-needs-a-national-quantum-defence-strategy/276500/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://techcentral.co.za/south-africa-needs-a-national-quantum-defence-strategy/276500/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; domestic activity is evaluation of foreign schemes",
+    "cite": "https://journal-isi.org/index.php/isi/article/view/1423"
+   }
+  },
+  {
+   "country": "New Zealand",
+   "region": "Oceania",
+   "R": 1.4,
+   "ICC": 1.8,
+   "CREATE": 0.33,
+   "IPC": 0.6,
+   "NATCTRL": 1.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.4,
+   "ICC_hi": 2.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "High",
+     "why": "No indigenous PQC primitive; Steven Galbraith (Auckland) does isogeny cryptanalysis, not authorship of a standardized scheme",
+     "cite": "https://www.math.auckland.ac.nz/~sgal018/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Medium",
+     "why": "No domestic PQC library or hardware found; imports foreign implementations",
+     "cite": "https://nzism.gcsb.govt.nz/ism-document/pdf/Section/12224"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Strong academic PQC cryptanalysis (Galbraith, isogeny attacks); no national PQC evaluation program",
+     "cite": "https://www.math.auckland.ac.nz/~sgal018/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 1,
+     "ev": "High",
+     "why": "NZISM (GCSB) gives PQC-preparation guidance, approves no PQC yet, and will adopt NIST standards once published; no deadline set",
+     "cite": "https://nzism.gcsb.govt.nz/ism-document/pdf/Section/12224"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 1,
+     "ev": "Low",
+     "why": "Passive posture; waits for and will adopt foreign-standardized algorithms",
+     "cite": "https://www.infosecurity-magazine.com/news/ncsc-post-quantum-cryptography/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "Fully reliant on NIST/foreign PQC standards and implementations",
+    "cite": "https://nzism.gcsb.govt.nz/ism-document/pdf/Section/12224"
+   }
+  },
+  {
+   "country": "Indonesia",
+   "region": "Asia",
+   "R": 1.6,
+   "ICC": 1.8,
+   "CREATE": 0.33,
+   "IPC": 0.6,
+   "NATCTRL": 1.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.4,
+   "ICC_hi": 2.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Medium",
+     "why": "Indonesia designs its own classical algorithms but no indigenous quantum-safe primitive was found",
+     "cite": "https://bsn.go.id/main/berita/detail/25342/bsn-bssn-perkuat-sinergi-persiapan-migrasi-ke-algoritma-post-quantum-cryptography"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation found; preparatory stage only",
+     "cite": "https://bsn.go.id/main/berita/detail/25342/bsn-bssn-perkuat-sinergi-persiapan-migrasi-ke-algoritma-post-quantum-cryptography"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "BSN/BSSN coordinating standardization and conformity for PQC; evaluation activity still forming",
+     "cite": "https://bsn.go.id/main/berita/detail/25342/bsn-bssn-perkuat-sinergi-persiapan-migrasi-ke-algoritma-post-quantum-cryptography"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Medium",
+     "why": "BSSN National Task Force developing a National PQC Migration Roadmap and SNI/ISO-aligned guidance",
+     "cite": "https://indonesiabusinesspost.com/7149/cyber-and-espionage/indonesia-strengthens-cybersecurity-readiness-for-post-quantum-era"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No operational crypto-agility program yet",
+     "cite": "https://bsn.go.id/main/berita/detail/25342/bsn-bssn-perkuat-sinergi-persiapan-migrasi-ke-algoritma-post-quantum-cryptography"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "High dependency on NIST/ISO standards and foreign implementations",
+    "cite": "https://bsn.go.id/main/berita/detail/25342/bsn-bssn-perkuat-sinergi-persiapan-migrasi-ke-algoritma-post-quantum-cryptography"
+   }
+  },
+  {
+   "country": "Egypt",
+   "region": "Africa",
+   "R": 1.0,
+   "ICC": 1.8,
+   "CREATE": 0.33,
+   "IPC": 0.2,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.2,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "Emerging academic quantum/PQC groups (e.g. AleQCG); at most scattered analysis of foreign schemes, no verified indigenous design",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation traced to Egyptian institutions",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation/certification program found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No NTRA or government PQC migration roadmap/standard found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national crypto-agility posture",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Total reliance on foreign (NIST/ETSI) PQC standards",
+    "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+   }
+  },
+  {
+   "country": "Morocco",
+   "region": "Africa",
+   "R": 1.0,
+   "ICC": 1.8,
+   "CREATE": 0.33,
+   "IPC": 0.2,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.2,
+   "ICC_hi": 2.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "University research hubs forming (Morocco Quantum Network); review-level work on foreign schemes, no indigenous PQC design",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation/certification program found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No DGSSI or government PQC migration roadmap found",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national crypto-agility posture articulated",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Total reliance on foreign PQC standards and implementations",
+    "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+   }
+  },
+  {
+   "country": "Cameroon",
+   "region": "Africa",
+   "R": 0.2,
+   "ICC": 0.8,
+   "CREATE": 0.33,
+   "IPC": 0.2,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.4,
+   "ICC_hi": 1.6,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "High",
+     "why": "ePrint 2026/1761 (approved 2026-08-22) confirmed: Fouotsa & Mbeng (Univ. of Bamenda) with two French co-authors (CEA List, Télécom Paris), Module-NTRU lattice AKE; foreign-assumption research, no indigenous primitive.",
+     "cite": "https://eprint.iacr.org/2026/1761"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "Only an academic research prototype in a co-authored paper; no controlled domestic PQC implementation.",
+     "cite": "https://eprint.iacr.org/2026/1761"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification program.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration schedule.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented national crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Dependent on foreign PQC standards and stacks; single academic research effort is co-authored with a French institution.",
+    "cite": "https://eprint.iacr.org/2026/1761"
+   }
+  },
+  {
+   "country": "Algeria",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 1.4,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public evidence of Algeria-authored PQC design or national PQC research surfaced",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation or national crypto library found",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification activity found; relies on foreign assurance",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC migration profile; would follow foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility capability",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "PQC stack fully foreign; no public domestic PQC activity",
+    "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+   }
+  },
+  {
+   "country": "Kenya",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 1.4,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 2.0,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No indigenous PQC design; only growing awareness, no national PQC research surfaced",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; imports only",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation activity; foreign assurance",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Medium",
+     "why": "No mandated quantum-resistant transition; awareness only",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "PQC stack fully foreign; awareness-stage only",
+    "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+   }
+  },
+  {
+   "country": "Bahrain",
+   "region": "Asia",
+   "R": 1.6,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Medium",
+     "why": "correct prior justification; the SandboxAQ tie is the AQtive Guard crypto-discovery deployment (Dec 2025), not chemistry; still no indigenous PQC design.",
+     "cite": "https://www.sandboxaq.com/press/bahrain-government-takes-definitive-step-toward-building-a-quantum-safe-economy-through-strategic-partnership-with-sandboxaq"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; imports only",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation program; foreign assurance",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No codified national PQC migration profile; embeds NIST guidance implicitly",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "national crypto-discovery/migration tooling is a foreign (US) vendor platform, confirming a fully foreign PQC stack.",
+    "cite": "https://www.sandboxaq.com/press/bahrain-government-takes-definitive-step-toward-building-a-quantum-safe-economy-through-strategic-partnership-with-sandboxaq"
+   }
+  },
+  {
+   "country": "Nigeria",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.6,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No indigenous PQC design or national PQC research surfaced; only secondary mentions of African framework discussion",
+     "cite": "https://techtrendske.co.ke/2025/02/18/kenya-quantum-resistant-cryptography-awareness/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; imports only",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation activity; foreign assurance",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented NITDA/national PQC migration profile; follows foreign schedule",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "PQC stack fully foreign; no public domestic PQC activity",
+    "cite": "https://www.encryptionconsulting.com/pqc-migration-deadlines-by-country/"
+   }
+  },
+  {
+   "country": "Rwanda",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "AIMS Rwanda Quantum Leap Africa trains in quantum information science, but no PQC primitive research or indigenous quantum-safe algorithm.",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; relies on foreign libraries.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification program.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration schedule; would follow foreign guidance.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC standards, libraries, and toolchains.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Mauritius",
+   "region": "Africa",
+   "R": 1.0,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 1
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public record of indigenous PQC primitive or national PQC research call.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification program.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration policy identified.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC standards and libraries.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Uganda",
+   "region": "Africa",
+   "R": 0.6,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "National Cybersecurity Strategy 2022-2026 notes quantum computing as an emerging risk but has no PQC research or indigenous algorithm.",
+     "cite": "https://dig.watch/resource/ugandan-national-cybersecurity-strategy-2022-2026"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification activity.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "Strategy acknowledges quantum risk but sets no national PQC profile or migration schedule.",
+     "cite": "https://dig.watch/resource/ugandan-national-cybersecurity-strategy-2022-2026"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC standards and stacks.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Cote d'Ivoire",
+   "region": "Africa",
+   "R": 0.2,
+   "ICC": 1.2,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.8,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public record of PQC research or indigenous quantum-safe algorithm.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration schedule.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC stack.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Oman",
+   "region": "Asia",
+   "R": 0.6,
+   "ICC": 1.0,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.6,
+   "ICC_hi": 1.6,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No indigenous PQC design; Oman described as watching/shaping agenda, no PQC research surfaced",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; imports only",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation program; foreign assurance",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No codified national PQC migration profile; follows foreign guidance",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; awareness-stage only",
+    "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+   }
+  },
+  {
+   "country": "Kuwait",
+   "region": "Asia",
+   "R": 0.6,
+   "ICC": 0.8,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.6,
+   "ICC_hi": 1.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No indigenous PQC design; Kuwait in watching posture, no national PQC research surfaced",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation; imports only",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation program; foreign assurance",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No codified national PQC migration profile; embeds NIST guidance implicitly",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented PQC crypto-agility policy",
+     "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "PQC stack fully foreign; awareness-stage only",
+    "cite": "https://postquantum.com/quantum-computing/quantum-middle-east/"
+   }
+  },
+  {
+   "country": "Ghana",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 0.8,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.6,
+   "ICC_hi": 1.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 0
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "Universities are standing up quantum information science master's programs, but no PQC-specific primitive research or indigenous scheme.",
+     "cite": "https://thequantuminsider.com/2026/07/25/inside-africas-coordinated-race-to-secure-a-post-quantum-future/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation identified.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification activity.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration policy.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC standards and stacks.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Namibia",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 0.8,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.4,
+   "ICC_hi": 1.6,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 0
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public record of PQC research or indigenous quantum-safe algorithm.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration schedule.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC stack.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Tanzania",
+   "region": "Africa",
+   "R": 0.6,
+   "ICC": 0.8,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.6,
+   "ICC_hi": 1.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public record of PQC research or indigenous quantum-safe algorithm.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration schedule.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC stack.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "Botswana",
+   "region": "Africa",
+   "R": 0.4,
+   "ICC": 0.8,
+   "CREATE": 0.0,
+   "IPC": 0.0,
+   "NATCTRL": 0.0,
+   "ED": 4,
+   "cls": "Dependent",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 0.6,
+   "ICC_hi": 1.4,
+   "CREATE_lo": 0.0,
+   "CREATE_hi": 1.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 0
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 0
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 0
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 1
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 0,
+     "ev": "Low",
+     "why": "No public record of PQC research or indigenous quantum-safe algorithm.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No domestic PQC implementation.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC evaluation or certification.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 0,
+     "ev": "Low",
+     "why": "No national PQC profile or migration policy.",
+     "cite": "no public PQC record"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 0,
+     "ev": "Low",
+     "why": "No documented crypto-agility capability.",
+     "cite": "no public PQC record"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Low",
+    "why": "Fully dependent on foreign PQC stack.",
+    "cite": "no public PQC record"
+   }
+  },
+  {
+   "country": "United States",
+   "region": "North America",
+   "R": 3.8,
+   "ICC": 4.0,
+   "CREATE": 3.67,
+   "IPC": 3.8,
+   "NATCTRL": 4.0,
+   "ED": 1,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 4.0,
+   "ICC_hi": 4.0,
+   "CREATE_lo": 3.67,
+   "CREATE_hi": 3.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 4
+    },
+    {
+     "name": "Inventory",
+     "level": 4
+    },
+    {
+     "name": "Standards adoption",
+     "level": 4
+    },
+    {
+     "name": "Deployment",
+     "level": 3
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 4
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "US-based teams authored PQC candidates submitted to the international process (NTRU, SPHINCS+ co-authors, Classic McEliece); NIST only standardized, it did not author the winning CRYSTALS schemes.",
+     "cite": "https://csrc.nist.gov/projects/post-quantum-cryptography"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 4,
+     "ev": "High",
+     "why": "Full domestic PQC implementation and toolchain across OpenSSL/BoringSSL, AWS, Microsoft, and liboqs contributions.",
+     "cite": "https://openquantumsafe.org/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 4,
+     "ev": "High",
+     "why": "NIST IR 8610 (14 May 2026) advanced 9 additional-signature candidates to Round 3; HAWK withdrawn 29 Jul 2026. Draft FIPS 207 (HQC-KEM) not yet published as of Sep 2026.",
+     "cite": "https://www.nist.gov/news-events/news/2026/05/nine-candidates-advance-third-round-additional-digital-signatures-pqc"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 4,
+     "ev": "High",
+     "why": "NSA CNSA 2.0 issues and enforces a sovereign national PQC migration profile.",
+     "cite": "https://www.nsa.gov/cnsa"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "High",
+     "why": "Crypto-agility plus domestic authorship and the standardization body itself to design a replacement.",
+     "cite": "https://www.nist.gov/pqc"
+    }
+   ],
+   "ED_detail": {
+    "level": 1,
+    "ev": "Medium",
+    "why": "Near self-sufficient PQC stack; residual dependence is only that flagship standardized primitives were designed by international (largely European) teams.",
+    "cite": "https://pq-crystals.org/"
+   }
+  },
+  {
+   "country": "Germany",
+   "region": "Europe",
+   "R": 3.0,
+   "ICC": 3.6,
+   "CREATE": 3.33,
+   "IPC": 3.4,
+   "NATCTRL": 3.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.4,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 3.0,
+   "CREATE_hi": 3.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Home of core CRYSTALS-Kyber/Dilithium designers (Kiltz at RU Bochum, Schwabe at MPI-SP, Avanzi); indigenous schemes submitted to and selected in the international process.",
+     "cite": "https://pq-crystals.org/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production PQC implementations via BSI-funded work, Fraunhofer, and German industry.",
+     "cite": "https://www.bsi.bund.de/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 4,
+     "ev": "High",
+     "why": "BSI is an authoritative national evaluation body issuing PQC technical guidance (TR-02102) and certification.",
+     "cite": "https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Kryptografie/kryptografie_node.html"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "BSI now issues a dated national PQC phase-out schedule (Feb 2026); the federal government's own national roadmap under the EU roadmap was still announced as planned (Bundestag hib, 21 Jul 2025), so 3 holds.",
+     "cite": "https://www.bundestag.de/presse/hib/kurzmeldungen-1102528"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "High",
+     "why": "Agility plus domestic authorship of standardized primitives to design a replacement.",
+     "cite": "https://pq-crystals.org/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Own primitives, implementations, and national assurance, but hardware supply chain partly foreign.",
+    "cite": "https://www.bsi.bund.de/"
+   }
+  },
+  {
+   "country": "France",
+   "region": "Europe",
+   "R": 3.0,
+   "ICC": 3.6,
+   "CREATE": 3.33,
+   "IPC": 3.4,
+   "NATCTRL": 3.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.4,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 3.0,
+   "CREATE_hi": 3.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Home of Falcon designers (Fouque, Prest, Kirchner at Rennes) and Dilithium/Kyber co-author Stehle; indigenous schemes submitted to and selected in the international process.",
+     "cite": "https://falcon-sign.info/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production PQC implementations via ANSSI-guided industry and PQShield France.",
+     "cite": "https://cyber.gouv.fr/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 4,
+     "ev": "High",
+     "why": "ANSSI issued the first security visas including PQC (Thales MultiApp 5.2 Premium PQC 29 Sep 2025; Samsung S3SSE2A 1 Oct 2025), accredited CEA-Leti to evaluate PQC (29 Sep 2025) and set a PQC obligation at qualification entry from 2027.",
+     "cite": "https://cyber.gouv.fr/actualites/premiers-visas-de-securite-incluant-de-la-cryptographie-post-quantique"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "ANSSI issues a national phased PQC transition profile and roadmap.",
+     "cite": "https://cyber.gouv.fr/publications/anssi-views-post-quantum-cryptography-transition"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "High",
+     "why": "Agility plus domestic authorship (Falcon) to design a replacement.",
+     "cite": "https://falcon-sign.info/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Own primitives, implementations, and national assurance, but hardware supply chain partly foreign.",
+    "cite": "https://cyber.gouv.fr/"
+   }
+  },
+  {
+   "country": "Ukraine",
+   "region": "Europe",
+   "R": 2.0,
+   "ICC": 3.4,
+   "CREATE": 3.33,
+   "IPC": 3.4,
+   "NATCTRL": 3.5,
+   "ED": 1,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.6,
+   "CREATE_lo": 3.0,
+   "CREATE_hi": 3.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 4
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 4
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 4,
+     "ev": "High",
+     "why": "Nationally standardized indigenous PQC: DSTU 8961:2019 (Skelya) lattice KEM and DSTU 9212:2023 lattice signature (Vershyna).",
+     "cite": "https://link.springer.com/article/10.1007/s10559-025-00800-z"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic hardened implementations of the national standards, including FPGA-based embedded implementations.",
+     "cite": "https://journals.chnu.edu.ua/sisiot/article/view/7"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "National testing and evaluation of DSTU PQC standards, including side-channel and QROM security analysis by the national standards developers.",
+     "cite": "https://link.springer.com/article/10.1007/s10559-025-00800-z"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Issues and enforces its own national PQC standards independent of foreign schedules.",
+     "cite": "https://link.springer.com/article/10.1007/s10559-025-00800-z"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "Medium",
+     "why": "Agility backed by authorship and national standardization of its own PQC algorithms plus domestic implementation.",
+     "cite": "https://link.springer.com/article/10.1007/s10559-025-00800-z"
+    }
+   ],
+   "ED_detail": {
+    "level": 1,
+    "ev": "Medium",
+    "why": "Own nationally standardized indigenous schemes with domestic implementations; low external dependency for the core PQC stack.",
+    "cite": "https://journals.chnu.edu.ua/sisiot/article/view/7"
+   }
+  },
+  {
+   "country": "South Korea",
+   "region": "Asia",
+   "R": 2.6,
+   "ICC": 3.2,
+   "CREATE": 3.33,
+   "IPC": 3.4,
+   "NATCTRL": 3.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.2,
+   "ICC_hi": 3.2,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "KpqC national competition selected indigenous schemes (SMAUG-T, NTRU+, HAETAE, AIMer) in Jan 2025, and HAETAE was submitted to the NIST additional-signatures process.",
+     "cite": "https://pqshield.com/south-korea-announces-winners-of-kpqc-competition/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production implementations of its own and standard schemes (e.g. CryptoLab, national reference code).",
+     "cite": "https://kpqc.cryptolab.co.kr/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 4,
+     "ev": "Medium",
+     "why": "KCMVP, the national cryptographic-module validation programme, now certifies PQC modules (Hancom/SoftForum Jan 2025, XGate Apr 2026, ITCenPNS Jul 2026), an authoritative national PQC evaluation programme.",
+     "cite": "https://www.dataeconomy.co.kr/news/articleView.html?idxno=42583"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "NIS-backed national PQC standard toolkit and migration profile being issued.",
+     "cite": "https://pqshield.com/south-korea-announces-winners-of-kpqc-competition/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "Medium",
+     "why": "Agility plus indigenous authorship and national standardization to design a replacement.",
+     "cite": "https://kpqc.cryptolab.co.kr/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Own primitives and implementations, but hardware and some tooling foreign.",
+    "cite": "https://pqshield.com/south-korea-announces-winners-of-kpqc-competition/"
+   }
+  },
+  {
+   "country": "Russia",
+   "region": "Europe",
+   "R": 2.0,
+   "ICC": 3.8,
+   "CREATE": 3.0,
+   "IPC": 3.0,
+   "NATCTRL": 3.0,
+   "ED": 1,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.0,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 4
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "TC26 has indigenous PQC schemes (Shipovnik code-based signature, Hypericum hash-based, Codiaeum KEM) published but not yet nationally standardized.",
+     "cite": "https://link.springer.com/article/10.1007/s11416-024-00520-6"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production/reference implementations exist (open Shipovnik implementation for TC26; QApp/NSPK PQC pilot on domestic Hypericum).",
+     "cite": "https://github.com/QAPP-tech/shipovnik_tc26"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "National evaluation runs through TC26 working groups and the state National Technology Center for Digital Cryptography overseeing candidate evaluation.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Russia is building a sovereign GOST-based PQC track intended to be mandatory for government and critical infrastructure, independent of NIST schedules.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Agility backed by domestic implementations and own-scheme authorship; not 4 as no national PQC standard is yet issued.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    }
+   ],
+   "ED_detail": {
+    "level": 1,
+    "ev": "Medium",
+    "why": "Near self-sufficient PQC stack (own algorithms, own Streebog primitive, own implementations) with residual reliance on international cryptanalysis.",
+    "cite": "https://link.springer.com/article/10.1007/s11416-024-00520-6"
+   }
+  },
+  {
+   "country": "Netherlands",
+   "region": "Europe",
+   "R": 2.6,
+   "ICC": 3.0,
+   "CREATE": 3.0,
+   "IPC": 3.2,
+   "NATCTRL": 3.5,
+   "ED": 1,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.8,
+   "ICC_hi": 3.2,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Dutch-based co-designers (Schwabe at Radboud, Bos at NXP, Ducas at CWI) authored Kyber and Dilithium; capped at 3 since standardization was international, not a Dutch national standard.",
+     "cite": "https://www.cwi.nl/en/stories/cwis-leo-ducas-involved-in-two-primary-new-nist-post-quantum-cryptography-standards/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "High",
+     "why": "Domestic hardened and production implementations: reference code from Dutch teams plus NXP secure-element hardware PQC implementations.",
+     "cite": "https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-STANDARDIZATION-OF-POST-QUANTUM-CRYPTOGRAPHY"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "National evaluation capability via AIVD and CWI cryptanalysis feeding national guidance; not 4 without a formalized authoritative PQC certification program.",
+     "cite": "https://english.aivd.nl/latest/news/2024/12/03/aivd-cwi-and-tno-publish-renewed-handbook-for-quantum-safe-cryptography"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "Issues a national PQC profile via the AIVD/CWI/TNO PQC Migration Handbook with hybrid recommendations and EU PQC working-group co-leadership.",
+     "cite": "https://publications.tno.nl/publication/34643386/fXcPVHsX/TNO-2024-pqc-en.pdf"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "High",
+     "why": "Crypto-agility in national guidance combined with authorship of standardized schemes and domestic implementation.",
+     "cite": "https://www.cwi.nl/en/news/aivd-cwi-and-tno-publish-renewed-handbook-for-quantum-safe-cryptography/"
+    }
+   ],
+   "ED_detail": {
+    "level": 1,
+    "ev": "Medium",
+    "why": "Strong domestic capability (authorship, implementation, national migration guidance); dependency limited mainly to using the NIST standardization venue.",
+    "cite": "https://publications.tno.nl/publication/34643386/fXcPVHsX/TNO-2024-pqc-en.pdf"
+   }
+  },
+  {
+   "country": "UAE",
+   "region": "Asia",
+   "R": 3.2,
+   "ICC": 2.6,
+   "CREATE": 3.0,
+   "IPC": 3.0,
+   "NATCTRL": 3.0,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.4,
+   "ICC_hi": 2.8,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 4
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 3
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "TII-co-authored SDitH and SQIsign advanced to Round 3 of NIST additional signatures (14 May 2026); HQC-KEM standard expected 2027; remains 3 pending national/NIST standardization.",
+     "cite": "https://pqcnist.tii.ae/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "High",
+     "why": "ATRC (11 May 2026) designates TII-developed classical+PQC national cryptographic libraries, commercialised by VentureOne, as the official national cryptographic foundation for the transition.",
+     "cite": "https://www.atrc.gov.ae/news/uae-cyber-security-council-partners-atrc-advance-national-post-quantum-security-transition"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "CSC-ATRC agreement (11 May 2026) names TII Security Laboratory as the national cryptographic compliance-testing facility validating cryptographic assets against national regulatory requirements within the PQC transition; a national testing capability, not yet a formal certification programme.",
+     "cite": "https://www.atrc.gov.ae/news/uae-cyber-security-council-partners-atrc-advance-national-post-quantum-security-transition"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "Binding National Encryption Policy (Nov 2025) mandates PQC transition plans, run through the National Post-Quantum Migration Programme",
+     "cite": "https://pqshield.com/uae-establishes-requirements-for-cryptographic-controls-and-migration-planning/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Agility with domestic implementation: the national post-quantum library and co-authorship give the capacity to modify or replace primitives on its own, the standing agility this layer measures, rather than a demonstrated national swap; national crypto-discovery and inventory support migration planning; capped below authorship-based agility because the national stack standardizes on NIST-standardized algorithms of non-UAE origin.",
+     "cite": "https://www.computerweekly.com/news/366643900/UAE-launches-national-cryptography-discovery-platform-to-accelerate-post-quantum-security-transition"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Lower dependency via co-authorship of NIST candidates and domestic tooling, but standardizes on foreign-standardized algorithms",
+    "cite": "https://pqcnist.tii.ae/"
+   }
+  },
+  {
+   "country": "United Kingdom",
+   "region": "Europe",
+   "R": 3.0,
+   "ICC": 2.4,
+   "CREATE": 3.0,
+   "IPC": 3.2,
+   "NATCTRL": 3.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.0,
+   "ICC_hi": 2.8,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "PQShield (UK) co-designed Falcon and hardened Kyber/Dilithium/SPHINCS+; indigenous contributions to schemes submitted to the international process.",
+     "cite": "https://pqshield.com/falcon-a-post-quantum-signature-scheme/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic hardened/production PQC implementations and hardware IP via PQShield.",
+     "cite": "https://pqshield.com/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 3,
+     "ev": "High",
+     "why": "NCSC Annual Review 2025 confirms the pilot PQC assured-consultancy scheme onboarded eight companies (2025) and NCSC authored RFC 9794 on PQC terminology; pilot runs to 31 Mar 2027 with no mandate, so 3 holds.",
+     "cite": "https://www.ncsc.gov.uk/collection/ncsc-annual-review-2025/chapter-03-keeping-pace-with-evolving-technology/migrating-to-post-quantum-cryptography"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "NCSC issued a national PQC migration roadmap and transition timeline.",
+     "cite": "https://pqshield.com/ncsc-publishes-new-roadmap-for-pqc-migration/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "Medium",
+     "why": "Agility plus domestic authorship (PQShield) to design a replacement.",
+     "cite": "https://pqshield.com/falcon-a-post-quantum-signature-scheme/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Own primitives, implementations, and assurance, but hardware supply chain partly foreign.",
+    "cite": "https://pqshield.com/"
+   }
+  },
+  {
+   "country": "China",
+   "region": "Asia",
+   "R": 3.0,
+   "ICC": 3.8,
+   "CREATE": 2.67,
+   "IPC": 3.0,
+   "NATCTRL": 3.5,
+   "ED": 1,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.2,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 2.33,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 4
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "ICCS notice (9 Oct 2025) soliciting next-generation public-key (PQC) algorithms, submissions closed 30 Jun 2026, first-round candidates to be announced; national standard not yet issued so B1 stays 3.",
+     "cite": "https://www.niccs.org.cn/symmbzyjy/tzgg/pc/content/1976155884915003392/content_1976155884915003392.html"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production PQC implementations of its own and standard schemes (e.g. GmSSL ecosystem, pilots of homegrown algorithms).",
+     "cite": "https://en.qapp.tech/help/cacr"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National PQC evaluation activity via CACR competition and OSCCA commercial-cryptography testing infrastructure.",
+     "cite": "https://docbox.etsi.org/Workshop/2018/201811_ETSI_IQC_QUANTUMSAFE/EXECUTIVETRACK/JING_CHINESEACCADEMYOFSCIENCE.pdf"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Issues an independent national PQC direction and commercial-crypto migration path rather than following the NIST schedule.",
+     "cite": "https://www.sdxcentral.com/analysis/china-russia-to-adopt-slightly-different-pqc-standards-from-us/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "Medium",
+     "why": "Agility plus indigenous authorship and a national standardization channel to design and mandate a replacement.",
+     "cite": "https://en.qapp.tech/help/cacr"
+    }
+   ],
+   "ED_detail": {
+    "level": 1,
+    "ev": "Medium",
+    "why": "Deliberately low reliance on foreign PQC; own primitives, implementations, domestic hardware, and assurance.",
+    "cite": "https://www.sdxcentral.com/analysis/china-russia-to-adopt-slightly-different-pqc-standards-from-us/"
+   }
+  },
+  {
+   "country": "Switzerland",
+   "region": "Europe",
+   "R": 2.2,
+   "ICC": 3.4,
+   "CREATE": 2.67,
+   "IPC": 2.8,
+   "NATCTRL": 3.0,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.2,
+   "ICC_hi": 3.6,
+   "CREATE_lo": 2.33,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Swiss-based co-designers (Lyubashevsky and Seiler at IBM Research Zurich, Seiler also ETH) authored Kyber and Dilithium; capped at 3 as there is no Swiss national standard.",
+     "cite": "https://pq-crystals.org/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic production and reference implementations via IBM Research Zurich (IBM Quantum Safe) and ETH Zurich.",
+     "cite": "https://research.ibm.com/blog/nist-quantum-safe-protocols"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National-level PQC analysis by Swiss NCSC plus strong academic cryptanalysis; no formal national PQC certification program evidenced.",
+     "cite": "https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/strategie/cyberstrategie-ncs/Bericht-zur-Umsetzung-der-NCS_2024-EN.pdf.download.pdf/Bericht-zur-Umsetzung-der-NCS_2024-EN.pdf"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Tailors sector-level guidance (FINMA requiring a PQC roadmap) but largely aligns with the European position rather than issuing an independent national profile.",
+     "cite": "https://postquantum.com/security-pqc/finma-quantum-guidance/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 4,
+     "ev": "Medium",
+     "why": "Agility supported by authorship of standardized schemes plus domestic implementation (IBM Zurich, ETH); financial-sector guidance emphasizes agility.",
+     "cite": "https://postquantum.com/security-pqc/finma-quantum-guidance/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Domestic authorship and implementation strength, but migration policy follows European standardization and schedules more than a sovereign national program.",
+    "cite": "https://postquantum.com/security-pqc/finma-quantum-guidance/"
+   }
+  },
+  {
+   "country": "Canada",
+   "region": "North America",
+   "R": 3.0,
+   "ICC": 2.8,
+   "CREATE": 2.67,
+   "IPC": 2.8,
+   "NATCTRL": 3.0,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 2.33,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 4
+    },
+    {
+     "name": "Inventory",
+     "level": 3
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "University of Waterloo researchers co-submitted FrodoKEM and other candidates to the NIST process; ISARA also developed PQC.",
+     "cite": "https://uwaterloo.ca/math/news/waterloo-researchers-leading-quest-protect-against-quantum"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Canadian-led liboqs / Open Quantum Safe provides a domestic PQC implementation and toolchain.",
+     "cite": "https://openquantumsafe.org/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National PQC evaluation activity through CCCS guidance and strong academic analysis, with partial reliance on NIST.",
+     "cite": "https://www.cyber.gc.ca/en/guidance/preparing-your-organization-quantum-threat-cryptography-itsap00017"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Canada now issues and enforces its own national PQC migration profile: ITSM.40.001 roadmap (Jun 2025) + ITSP.40.111 algorithm profile + binding TBS SPIN (Oct 2025) with dated deliverables and TBS compliance monitoring.",
+     "cite": "https://www.canada.ca/en/government/system/digital-government/policies-standards/spin/migrating-government-canada-post-quantum-cryptography.html"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Agility plus domestic authorship (FrodoKEM) and a Canadian-led toolchain to re-issue.",
+     "cite": "https://openquantumsafe.org/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Own submitted primitives and toolchain, but standardized deployment leans on foreign NIST standards and hardware.",
+    "cite": "https://uwaterloo.ca/math/news/waterloo-researchers-leading-quest-protect-against-quantum"
+   }
+  },
+  {
+   "country": "Taiwan",
+   "region": "Asia",
+   "R": 2.2,
+   "ICC": 2.8,
+   "CREATE": 2.67,
+   "IPC": 2.8,
+   "NATCTRL": 3.0,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.2,
+   "ICC_hi": 3.2,
+   "CREATE_lo": 2.33,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 1
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Academia Sinica (Bo-Yin Yang) co-designed internationally submitted PQC schemes (NTRU Prime, Classic McEliece, Rainbow, UOV); not standardized as primary NIST picks.",
+     "cite": "https://www.iis.sinica.edu.tw/en/page/ResearchOverview/KeyProjects/Post-QuantumCryptography.html"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "first domestic PQC security chip (ITRI IP with Huizhi Security, under MODA DIA guidance) launched at SEMICON Taiwan 3 Sep 2026 supporting FIPS 203/204/205; confirms hardened domestic implementation.",
+     "cite": "https://newtalk.tw/news/view/2026-09-03/1057613"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National research institute (Academia Sinica) conducts PQC evaluation and cryptanalysis; no formal national certification program evidenced.",
+     "cite": "https://www.iis.sinica.edu.tw/en/page/ResearchOverview/KeyProjects/Post-QuantumCryptography.html"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "National sector profile issued: the Financial Supervisory Commission published a PQC migration reference guide with 2026-2027 short-term and through-2035 long-term timelines.",
+     "cite": "https://www.taiwannews.com.tw/news/6231595"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Agility backed by domestic (partly CAVP-validated) implementation and authorship of internationally submitted schemes; not 4 as those schemes are not standardized.",
+     "cite": "https://www.chelpis.com/post/chelpis-presents-taiwan-s-post-quantum-cryptography-migration-framework"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Deployed standardized primitives are foreign, but strong domestic authorship and implementation give only moderate dependency.",
+    "cite": "https://www.iis.sinica.edu.tw/en/page/ResearchOverview/KeyProjects/Post-QuantumCryptography.html"
+   }
+  },
+  {
+   "country": "Brazil",
+   "region": "South America",
+   "R": 1.8,
+   "ICC": 2.4,
+   "CREATE": 2.67,
+   "IPC": 2.6,
+   "NATCTRL": 2.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": true,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 0.969,
+   "ICC_lo": 2.0,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 2.0,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 1
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Brazilian co-authorship of internationally submitted schemes: USP co-submitters on qTESLA (NIST Round 2) and Brazilian cryptographer Paulo Barreto on BIKE; no nationally standardized indigenous scheme.",
+     "cite": "https://eprint.iacr.org/2019/085.pdf"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Domestic Kryptus kNET HSM (secures all AC-Raiz chains, >1M ops/day on Gov.br) implements ML-KEM/ML-DSA/SLH-DSA; ITI signed first experimental ML-DSA document on it 13 Nov 2025, technology slated for AC-Raiz adoption.",
+     "cite": "https://kryptus.com/newsroom-kryptus/assinatura-pos-quantica-ac-raiz/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Moving from academic analysis toward national evaluation via ITI's ICP-Brasil PQC algorithm-standardization process; no standalone national testing program.",
+     "cite": "https://capitaldigital.com.br/portaria-do-iti-estabelece-algoritmos-pos-quanticos-aos-padroes-da-icp-brasil/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "ITI Instrucao Normativa no 35 (2026) issues and enforces a national PQC profile across ICP-Brasil and GOV.BR with approved algorithms and a phased migration.",
+     "cite": "https://capitaldigital.com.br/portaria-do-iti-estabelece-algoritmos-pos-quanticos-aos-padroes-da-icp-brasil/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Documented crypto-agility on a largely foreign-designed PQC stack (inventory, hybrid adoption, agility frameworks for public sector and financial rails).",
+     "cite": "https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/36779"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Adopted standardized primitives are foreign-designed, but strong national migration governance and genuine domestic research reduce dependency.",
+    "cite": "https://capitaldigital.com.br/portaria-do-iti-estabelece-algoritmos-pos-quanticos-aos-padroes-da-icp-brasil/"
+   }
+  },
+  {
+   "country": "Belgium",
+   "region": "Europe",
+   "R": 1.8,
+   "ICC": 3.4,
+   "CREATE": 2.33,
+   "IPC": 2.4,
+   "NATCTRL": 2.5,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 3.0,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 2.0,
+   "CREATE_hi": 2.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 4
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 3
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "KU Leuven COSIC authored SABER (NIST PQC Round 3 finalist KEM) and co-authored SPHINCS+ (Ward Beullens), standardized as FIPS 205",
+     "cite": "https://www.esat.kuleuven.be/cosic/pqcrypto/saber/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "COSIC publishes masked/side-channel-resistant SABER implementations and PQC hardware accelerators",
+     "cite": "https://www.esat.kuleuven.be/cosic/pqcrypto/saber/files/maskedSaber.pdf"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Medium",
+     "why": "World-class academic PQC cryptanalysis at COSIC; no dedicated national PQC certification program",
+     "cite": "https://www.esat.kuleuven.be/cosic/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Medium",
+     "why": "CCB and Cyber Security Coalition quantum-era white paper sets a risk-tiered national migration plan aligned to EU NIS-CG",
+     "cite": "https://ccb.belgium.be/news/preparing-quantum-era-strategic-imperative-belgian-organisations"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Low",
+     "why": "Crypto-agility backed by domestic implementations, but no evidence of a national agility program swapping to self-authored primitives",
+     "cite": "https://cybersecuritycoalition.be/resource/white-paper-preparing-for-the-quantum-era/"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Low design dependency (co-authored the standards) but deployed stack standardizes on NIST algorithms",
+    "cite": "https://www.esat.kuleuven.be/cosic/pqcrypto/saber/"
+   }
+  },
+  {
+   "country": "Austria",
+   "region": "Europe",
+   "R": 1.0,
+   "ICC": 2.8,
+   "CREATE": 2.33,
+   "IPC": 2.2,
+   "NATCTRL": 2.0,
+   "ED": 2,
+   "cls": "Full-stack maker",
+   "boundary": false,
+   "type": "Full-stack maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 2.0,
+   "CREATE_hi": 2.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 1
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "TU Graz IAIK co-designed SPHINCS+ (FIPS 205, e.g. Dobraunig, Eichlseder, Rechberger) and Picnic; note Ascon is lightweight, not PQC",
+     "cite": "https://sphincs.org/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 3,
+     "ev": "Medium",
+     "why": "TU Graz built KaLi, a unified Kyber/Dilithium (ML-KEM/ML-DSA) coprocessor; Silicon Austria Labs PQC accelerator",
+     "cite": "https://www.tugraz.at/en/news/article/tu-graz-entwickelt-hardware-architektur-fuer-post-quantum-kryptographie"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Medium",
+     "why": "Strong academic PQC analysis at TU Graz IAIK; no Austria-specific national PQC certification program found",
+     "cite": "https://www.iaik.tugraz.at/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 1,
+     "ev": "Low",
+     "why": "Follows EU NIS Cooperation Group roadmap; no dedicated Austrian national PQC migration profile surfaced",
+     "cite": "https://industrialcyber.co/regulation-standards-and-compliance/eu-begins-coordinated-effort-for-member-states-to-switch-critical-infrastructure-to-quantum-resistant-encryption-by-2030/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Low",
+     "why": "Agility supported by domestic PQC hardware implementations; national deployment agility program not evidenced",
+     "cite": "https://www.tugraz.at/en/news/article/tu-graz-entwickelt-hardware-architektur-fuer-post-quantum-kryptographie"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Low design dependency (co-authored FIPS 205, builds own PQC hardware); standards adoption follows NIST/EU",
+    "cite": "https://sphincs.org/"
+   }
+  },
+  {
+   "country": "Singapore",
+   "region": "Asia",
+   "R": 2.6,
+   "ICC": 1.6,
+   "CREATE": 1.0,
+   "IPC": 1.4,
+   "NATCTRL": 2.0,
+   "ED": 4,
+   "cls": "Ready adopter",
+   "boundary": false,
+   "type": "",
+   "gate": false,
+   "retention": 1.0,
+   "ICC_lo": 1.4,
+   "ICC_hi": 1.8,
+   "CREATE_lo": 0.33,
+   "CREATE_hi": 1.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 1
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 1
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 1
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 1,
+     "ev": "Low",
+     "why": "University PQC research (NTU/NUS) on foreign schemes; no indigenous PQC candidate submitted to any process.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Largely wraps foreign PQC libraries with research-level integration.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 1,
+     "ev": "Low",
+     "why": "Academic evaluation only; national assurance relies on foreign standards.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Low",
+     "why": "CSA/IMDA advisories and quantum-safe testbeds tailor a national PQC adoption profile aligned to NIST.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Low",
+     "why": "Documented crypto-agility on a foreign PQC stack.",
+     "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+    }
+   ],
+   "ED_detail": {
+    "level": 4,
+    "ev": "Medium",
+    "why": "Capable adopter running a fully foreign PQC stack for primitives, implementations, and hardware.",
+    "cite": "https://postquantum.com/post-quantum/sovereignty-quantum-pqc/"
+   }
+  },
+  {
+   "country": "Japan",
+   "region": "Asia",
+   "R": 2.0,
+   "ICC": 3.2,
+   "CREATE": 3.0,
+   "IPC": 3.0,
+   "NATCTRL": 3.0,
+   "ED": 2,
+   "cls": "Research maker",
+   "boundary": false,
+   "type": "Research maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 2.8,
+   "ICC_hi": 3.6,
+   "CREATE_lo": 2.67,
+   "CREATE_hi": 3.33,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 4
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Japan authored full indigenous PQC candidates submitted internationally to NIST Round 1 (Giophantus, LOTUS); not selected, so not nationally standardized.",
+     "cite": "https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8240.pdf"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Strong domestic implementation of standard PQC schemes (NTT and other Japanese labs); no evidenced full sovereign hardened toolchain.",
+     "cite": "https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8240.pdf"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 4,
+     "ev": "High",
+     "why": "CRYPTREC published FY2025 external evaluation reports (ML-KEM) on 30 Mar 2026 and CRYPTREC Report 2025 on 24 Jul 2026, sustaining the authoritative national PQC evaluation programme.",
+     "cite": "https://www.cryptrec.go.jp/whatsnew.html"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "High",
+     "why": "CRYPTREC national PQC guideline plus the National Cyber Office mandate for government transition by 2035 constitute an enforced national profile and schedule.",
+     "cite": "https://postquantum.com/security-pqc/japan-nco-pqc-2035-target/"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "National guidance promotes crypto-agility and hybrid transition, backed by domestic implementation; not 4 because indigenous primitives were not standardized.",
+     "cite": "https://www.nri.com/en/media/journal/20251126.html"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Deployed standardized primitives are foreign-designed, but strong domestic evaluation (CRYPTREC), implementation, and prior authorship give only moderate dependency.",
+    "cite": "https://pqshield.com/wp-content/uploads/2026/03/cryptrec-ex-3502-2025.pdf"
+   }
+  },
+  {
+   "country": "Turkey",
+   "region": "Europe",
+   "R": 1.4,
+   "ICC": 3.6,
+   "CREATE": 2.33,
+   "IPC": 2.0,
+   "NATCTRL": 1.5,
+   "ED": 3,
+   "cls": "Research maker",
+   "boundary": true,
+   "type": "Research maker",
+   "gate": true,
+   "retention": 0.908,
+   "ICC_lo": 3.0,
+   "ICC_hi": 3.8,
+   "CREATE_lo": 1.67,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 0
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 4
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 4
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 4
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 4
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Turkish cryptographer Sedat Akleylek co-submitted qTESLA, a lattice signature that reached NIST PQC Round 2.",
+     "cite": "https://www.semanticscholar.org/paper/Submission-to-NIST-%E2%80%99-s-post-quantum-project-:-Name-Bindel/85bbde6ce6e24add35ee6b62a443b2c1e252ba98"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Low",
+     "why": "TUBITAK-funded academic groups (Sabanci) implement standard lattice PQC schemes, but no hardened national production toolchain is evidenced.",
+     "cite": "https://cisec.sabanciuniv.edu/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Low",
+     "why": "TUBITAK BILGEM UEKAE is the national crypto R&D authority with active PQC researchers, indicating national evaluation activity short of a formal PQC certification program.",
+     "cite": "https://en.bilgem.tubitak.gov.tr/en/uekae/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 1,
+     "ev": "Low",
+     "why": "No public evidence of an issued or tailored national Turkish PQC migration profile; posture follows foreign (NIST) profiles.",
+     "cite": "https://en.wikipedia.org/wiki/Turkish_National_Research_Institute_of_Electronics_and_Cryptology"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 2,
+     "ev": "Low",
+     "why": "Documented research-level agility on the foreign PQC stack plus prior indigenous co-authorship (qTESLA); no standardized national scheme underpins full agility.",
+     "cite": "https://www.semanticscholar.org/paper/Submission-to-NIST-%E2%80%99-s-post-quantum-project-:-Name-Bindel/85bbde6ce6e24add35ee6b62a443b2c1e252ba98"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Low",
+    "why": "Substantial domestic PQC research and implementation capacity, but deployed standardized primitives are foreign-designed, so largely dependent.",
+    "cite": "https://en.bilgem.tubitak.gov.tr/en/uekae/"
+   }
+  },
+  {
+   "country": "Vietnam",
+   "region": "Asia",
+   "R": 1.6,
+   "ICC": 2.6,
+   "CREATE": 2.33,
+   "IPC": 2.4,
+   "NATCTRL": 2.5,
+   "ED": 2,
+   "cls": "Research maker",
+   "boundary": true,
+   "type": "Research maker",
+   "gate": true,
+   "retention": 0.879,
+   "ICC_lo": 2.0,
+   "ICC_hi": 3.2,
+   "CREATE_lo": 1.67,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 2
+    },
+    {
+     "name": "Inventory",
+     "level": 0
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 1
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "Medium",
+     "why": "VN-PQSign hash-based signature formally introduced by the Institute of Cryptography Science and Technology (Government Cipher Committee) on 10 Feb 2026; no TCVN standardization found, so stays 3.",
+     "cite": "https://en.nhandan.vn/viet-nam-unveils-breakthroughs-in-postquantum-cryptography-and-security-standards-post158972.html"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Domestic implementation of PQC schemes under a Make in Vietnam self-reliance policy (VN-PQsign built domestically); no full hardened production toolchain evidenced.",
+     "cite": "https://natlawreview.com/press-releases/post-quantum-cryptography-migration-gains-urgency-vietnam-regulatory"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National PQC evaluation activity via the Government Cipher Committee and a new Advanced Cryptography Research Lab; no formal national certification program yet.",
+     "cite": "https://natlawreview.com/press-releases/post-quantum-cryptography-migration-gains-urgency-vietnam-regulatory"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Tailors a national profile through regulatory instruments (Cybersecurity Law 116/2025, TCVN standards) rather than adopting a foreign profile as-is; enforcement not yet documented.",
+     "cite": "https://natlawreview.com/press-releases/post-quantum-cryptography-migration-gains-urgency-vietnam-regulatory"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Medium",
+     "why": "Agility plus domestic implementation, with stated readiness to upgrade state systems using domestically built schemes.",
+     "cite": "https://natlawreview.com/press-releases/post-quantum-cryptography-migration-gains-urgency-vietnam-regulatory"
+    }
+   ],
+   "ED_detail": {
+    "level": 2,
+    "ev": "Medium",
+    "why": "Building domestic capability but still emerging, with much national infrastructure on foreign classical stacks.",
+    "cite": "https://natlawreview.com/press-releases/post-quantum-cryptography-migration-gains-urgency-vietnam-regulatory"
+   }
+  },
+  {
+   "country": "Australia",
+   "region": "Oceania",
+   "R": 2.4,
+   "ICC": 2.0,
+   "CREATE": 2.33,
+   "IPC": 2.6,
+   "NATCTRL": 3.0,
+   "ED": 3,
+   "cls": "Research maker",
+   "boundary": true,
+   "type": "Research maker",
+   "gate": true,
+   "retention": 1.0,
+   "ICC_lo": 1.8,
+   "ICC_hi": 2.2,
+   "CREATE_lo": 1.67,
+   "CREATE_hi": 3.0,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 2
+    },
+    {
+     "name": "Standards adoption",
+     "level": 3
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 2
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 2
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 2
+    },
+    {
+     "name": "Governance & standards",
+     "level": 2
+    },
+    {
+     "name": "Research & talent base",
+     "level": 2
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "High",
+     "why": "Monash University team (Steinfeld) submitted the indigenous Titanium KEM to the NIST PQC process.",
+     "cite": "https://users.monash.edu/~rste/Titanium_NISTSub.pdf"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 2,
+     "ev": "Low",
+     "why": "Academic/research domestic implementations of standard schemes; no evidence of production-hardened domestic stack.",
+     "cite": "https://users.monash.edu.au/~rste/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Low",
+     "why": "ASD maintains an approved-algorithms list and some national PQC evaluation, but leans on NIST assurance.",
+     "cite": "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism/cyber-security-guidelines/guidelines-cryptography"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 3,
+     "ev": "Medium",
+     "why": "ASD issues a national PQC profile and its own transition timeline (eliminating vulnerable algorithms by 2030).",
+     "cite": "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism/cyber-security-guidelines/guidelines-cryptography"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 3,
+     "ev": "Low",
+     "why": "Agility with latent domestic authorship (Titanium) to design a replacement, though thin in production.",
+     "cite": "https://users.monash.edu/~rste/Titanium.html"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "Mostly a capable adopter; primitive research exists but implementations and hardware are largely foreign.",
+    "cite": "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism/cyber-security-guidelines/guidelines-cryptography"
+   }
+  },
+  {
+   "country": "Malaysia",
+   "region": "Asia",
+   "R": 2.2,
+   "ICC": 2.8,
+   "CREATE": 2.0,
+   "IPC": 1.8,
+   "NATCTRL": 1.5,
+   "ED": 3,
+   "cls": "Research maker",
+   "boundary": true,
+   "type": "Research maker",
+   "gate": true,
+   "retention": 0.839,
+   "ICC_lo": 2.6,
+   "ICC_hi": 3.0,
+   "CREATE_lo": 1.33,
+   "CREATE_hi": 2.67,
+   "R_dims": [
+    {
+     "name": "Strategy & mandate",
+     "level": 3
+    },
+    {
+     "name": "Inventory",
+     "level": 1
+    },
+    {
+     "name": "Standards adoption",
+     "level": 2
+    },
+    {
+     "name": "Deployment",
+     "level": 2
+    },
+    {
+     "name": "Workforce",
+     "level": 3
+    }
+   ],
+   "A_dims": [
+    {
+     "name": "Algorithmic research & authorship",
+     "level": 3
+    },
+    {
+     "name": "Vendor & supply chain",
+     "level": 2
+    },
+    {
+     "name": "Infrastructure operation",
+     "level": 3
+    },
+    {
+     "name": "Governance & standards",
+     "level": 3
+    },
+    {
+     "name": "Research & talent base",
+     "level": 3
+    }
+   ],
+   "B_dims": [
+    {
+     "key": "B1",
+     "name": "Indigenous PQC primitive",
+     "level": 3,
+     "ev": "Medium",
+     "why": "KAZ-KA/KAZ-KEM/KAZ-SIGN v1.6.4/v2.0 were submitted as post-quantum candidates to the national MySEAL 2.0 call; ePrint 2026/064 (Jan-Feb 2026) breaks all four, so the scheme is weak but authorship stands.",
+     "cite": "https://eprint.iacr.org/2026/064"
+    },
+    {
+     "key": "B2",
+     "name": "PQC implementation",
+     "level": 1,
+     "ev": "Low",
+     "why": "UPM-Phison-MaiStorage collaboration (13 Nov 2025) to build a KAZ-SIGN-based security system; no shipped domestic implementation of standard schemes found, so B2 stays 1.",
+     "cite": "https://berita.rtm.gov.my/nasional/senarai-berita-nasional/senarai-artikel/upm-bangun-teknologi-kaz-sign-teraju-keselamatan-digital-pasca-kuantum-negara/"
+    },
+    {
+     "key": "B3",
+     "name": "PQC validation",
+     "level": 2,
+     "ev": "Medium",
+     "why": "National PQC evaluation activity: MySEAL 2.0 AKBA call (7 Mar 2024 to 7 Mar 2025) evaluated PQC candidates (KAZ suite); CyberSecurity Malaysia lists a PQC Product Validation & Certification facility (Sep 2025).",
+     "cite": "https://mykripto.cybersecurity.my/"
+    },
+    {
+     "key": "B4",
+     "name": "National PQC integration",
+     "level": 2,
+     "ev": "Medium",
+     "why": "Malaysia now tailors its own profile: National PQC Migration Plan 2025-2030 launched 12 Nov 2025; MyKriptografi cryptography policy Cabinet-approved 28 Nov 2025; MySEAL designated to set Malaysia's PQC standards.",
+     "cite": "https://www.nacsa.gov.my/kriptografi-view.php"
+    },
+    {
+     "key": "B5",
+     "name": "PQC replaceability",
+     "level": 1,
+     "ev": "Low",
+     "why": "Can swap only what foreign vendors ship; waits for foreign fixes.",
+     "cite": "https://postquantum.com/security-pqc/malaysia-nacsa-pqc-readiness-roadmap/"
+    }
+   ],
+   "ED_detail": {
+    "level": 3,
+    "ev": "Medium",
+    "why": "No longer a fully foreign stack: indigenous authorship (KAZ-SIGN at NIST) and a national evaluation channel (MySEAL 2.0, MyCEL FIPS 140 lab) exist, though deployed primitives, libraries and hardware remain foreign.",
+    "cite": "https://csrc.nist.gov/Projects/pqc-dig-sig/round-1-additional-signatures"
+   }
+  }
+ ]
+}
