@@ -73,25 +73,25 @@
 <main class="container py-4">
 
   <header class="mb-4">
-    <h1 class="h3 fw-bold">Who controls post-quantum cryptography</h1>
-    <p class="lead fs-6 text-body-secondary" style="text-align:justify">Cryptographic sovereignty is not one
-      thing. This explorer decomposes it into three distinct constructs, <strong>indigenous cryptographic
-      capacity</strong> (the general, classical-inclusive base), <strong>indigenous post-quantum control</strong>
-      (the quantum-safe layer only), and <strong>external dependency</strong>, so a country&rsquo;s classical
-      strength is never mistaken for control of the post-quantum layer. A country counts as a
-      <strong>post-quantum maker</strong> only by clearing a strict gate of demonstrated, institutionally
-      sustained post-quantum capability.</p>
+    <h1 class="h3 fw-bold">National post-quantum readiness and sovereignty</h1>
+    <p class="lead fs-6 text-body-secondary" style="text-align:justify">This explorer presents the country
+      assessments of the Readiness&ndash;Sovereignty Capability Model (RSCM). The model scores post-quantum
+      migration readiness and decomposes cryptographic sovereignty into three constructs, <strong>indigenous
+      cryptographic capacity</strong> (general capacity, including classical cryptography), <strong>indigenous
+      post-quantum control</strong> (the quantum-safe layer only), and <strong>external dependency</strong>, so
+      that general cryptographic strength is not read as control of the post-quantum layer. A country is
+      classified as a <strong>post-quantum maker</strong> only when public evidence shows that it designs,
+      implements, or validates post-quantum cryptography on a sustained institutional basis.</p>
   </header>
 
   <section class="rounded-2 bg-body-tertiary border-start border-4 border-primary p-3 mb-4 small text-body-secondary" style="text-align:justify">
-    <strong class="text-body">Reading the model.</strong> Scores are ordinal levels (0&ndash;4) coded from cited public evidence;
-    class depends on the maker gate and the ordering of a single creation level, not on arithmetic across the
-    scale. The maker gate requires level&nbsp;3 on at least one creation layer (primitive design, implementation,
-    or validation) on a sustained institutional basis; classical capability and governance authority alone never
-    qualify. Retention is the fraction of a 4000-draw plausible-state bootstrap over per-cell evidence grades that
-    keeps a country&rsquo;s maker verdict. Evidence strength is graded H&nbsp;/&nbsp;M&nbsp;/&nbsp;L per cell.
-    This is a companion to the RSCM paper and reflects a purposive sample of documented cryptographic actors, not
-    a global census.
+    <strong class="text-body">Reading the scores.</strong> Every cell is an ordinal level (0&ndash;4) coded from cited
+    public evidence and graded H&nbsp;/&nbsp;M&nbsp;/&nbsp;L for evidence strength. The class follows the maker gate,
+    which requires level&nbsp;3 on at least one creation layer (primitive design, implementation, or validation) on a
+    sustained institutional basis; classical capability and governance authority do not qualify on their own.
+    Retention is the share of a 4000-draw bootstrap over the plausible states of each cell, given its evidence grade,
+    in which the country keeps its maker verdict. The sample is purposive, covering documented cryptographic actors,
+    and is not a global census. The model is described in the companion paper.
   </section>
 
   <div class="row g-3 mb-4" id="stats"></div>
@@ -114,11 +114,12 @@
   <div class="card mb-4">
     <div class="card-body">
       <h2 class="h5 card-title">Live world view</h2>
-      <p class="card-text text-body-secondary small" style="text-align:justify">Every assessed country on the map,
-        colored by the selected layer. Makers emit outward pulses paced by their creation score<span class="info-i" data-info="Cr">i</span>;
-        countries whose deployed post-quantum layer is foreign-supplied (external dependency 3 or 4) receive an inbound
-        flow drawn from the standardization hub at NIST, whose ML-KEM, ML-DSA and SLH-DSA schemes those stacks adopt.
-        The spotlight cycles through the sample; hover for scores, click for the evidence.</p>
+      <p class="card-text text-body-secondary small" style="text-align:justify">The assessed countries on a map,
+        colored by the selected layer. Makers are marked with expanding rings whose rate follows the creation
+        score<span class="info-i" data-info="Cr">i</span>. Countries whose deployed post-quantum layer is foreign-supplied
+        (external dependency 3 or 4) are joined by a line to NIST, which standardized the ML-KEM, ML-DSA, and SLH-DSA
+        schemes that those stacks adopt. The panel below the map cycles through the countries; hover over a country
+        for its scores and click it for the evidence.</p>
       <div class="live" id="live">
         <svg id="worldmap" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" role="img"
           aria-label="Animated world map of post-quantum readiness and sovereignty classes"></svg>
@@ -144,11 +145,12 @@
   <div class="card mb-4">
     <div class="card-body">
       <h2 class="h5 card-title">The capacity&ndash;creation plane</h2>
-      <p class="card-text text-body-secondary small" style="text-align:justify">Every country placed by general
+      <p class="card-text text-body-secondary small" style="text-align:justify">Each country is placed by general
         cryptographic capacity (horizontal)<span class="info-i" data-info="ICC">i</span> against indigenous
-        post-quantum creation (vertical)<span class="info-i" data-info="Cr">i</span>. The two are not
-        collapsed: capable countries can sit far to the right yet near the floor on creation. Only the shaded band
-        clears the maker gate<span class="info-i" data-info="gate">i</span>. Click any point for the evidence behind its scores.</p>
+        post-quantum creation (vertical)<span class="info-i" data-info="Cr">i</span>. The two axes are kept
+        separate, so a country with high general capacity can still sit near zero on creation. Countries in the
+        shaded band clear the maker gate<span class="info-i" data-info="gate">i</span>. Click a point for the evidence
+        behind its scores.</p>
       <div class="plane-wrap">
         <svg class="plane" id="plane" viewBox="0 0 880 660" preserveAspectRatio="xMidYMid meet" role="img"
           aria-label="Scatter of countries by cryptographic capacity against post-quantum creation"></svg>
@@ -162,8 +164,8 @@
       <h2 class="h5 card-title" id="tblHeading">All countries</h2>
       <p class="card-text text-body-secondary small" style="text-align:justify">Readiness R, indigenous
         cryptographic capacity ICC, indigenous post-quantum creation Cr, external dependency ED, class, and the
-        share of bootstrap re-codings that keep the maker verdict. A dagger marks a boundary case. Sort any
-        column; click a row for detail.</p>
+        share of bootstrap draws that keep the maker verdict. A dagger marks a boundary case. Columns can be
+        sorted; click a row for the country record.</p>
       <div class="row g-2 align-items-center mb-3">
         <div class="col-12 col-md">
           <input type="search" class="form-control form-control-sm" id="search" placeholder="Search country or region&hellip;" aria-label="Search">
@@ -196,12 +198,12 @@
 
   <div class="card mb-4">
     <div class="card-body">
-      <h2 class="h5 card-title">Extend the dataset in your browser</h2>
-      <p class="card-text text-body-secondary small" style="text-align:justify">Download the full current
-        database, edit or add countries with their coded levels and sources, then upload it back. The tool
-        re-scores each entry by the same rules (Cr, the maker gate, class, type, and a retention bootstrap),
-        updates a country if it already exists or adds it if new, and keeps your changes in this browser only
-        (localStorage). Nothing is uploaded anywhere. Uploaded entries are marked <span class="badge rounded-pill text-bg-secondary">local</span>.</p>
+      <h2 class="h5 card-title">Extend the dataset locally</h2>
+      <p class="card-text text-body-secondary small" style="text-align:justify">Download the current
+        dataset, edit or add countries with their coded levels and sources, and upload the file. The page
+        recomputes each entry under the same rules (Cr, the maker gate, class, type, and the retention bootstrap),
+        updates an existing country or adds a new one, and stores the changes in this browser only. Nothing is
+        sent to a server. Uploaded entries are marked <span class="badge rounded-pill text-bg-secondary">local</span>.</p>
       <div class="d-flex flex-wrap gap-2 align-items-center">
         <button class="btn btn-sm btn-primary" id="dltemplate" type="button">Download template</button>
         <button class="btn btn-sm btn-outline-secondary" id="dljson" type="button">Download full database (JSON)</button>
@@ -216,8 +218,8 @@
         <div class="small text-body-secondary mt-2" style="text-align:justify">
           <p class="mb-2">Upload a JSON file shaped like the template: a top-level <code>countries</code> array,
           one object per country. You supply the coded <strong>levels (integers 0&ndash;4)</strong> and the
-          sources; the tool computes R, ICC, Cr, ED, class, type, boundary, and retention, so you never fill
-          those.</p>
+          sources; the page computes R, ICC, Cr, ED, class, type, boundary, and retention, which are not supplied
+          by the user.</p>
           <div class="table-responsive">
             <table class="table table-sm table-bordered align-middle mb-2">
               <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
@@ -235,8 +237,8 @@
             </table>
           </div>
           <p class="mb-0">The maker gate is <code>max(B1,B2,B3) &ge; 3 and not isolated</code>; otherwise a country
-          is capable if ICC&nbsp;&ge;&nbsp;2, a ready adopter if R&nbsp;&ge;&nbsp;2, else dependent. Tip: start
-          from <em>Download full database</em> to copy the exact shape of a real country.</p>
+          is capable if ICC&nbsp;&ge;&nbsp;2, a ready adopter if R&nbsp;&ge;&nbsp;2, and dependent otherwise. The
+          downloaded dataset shows the exact shape of a complete country record.</p>
         </div>
       </details>
     </div>
@@ -247,10 +249,11 @@
     <div class="card mb-4">
       <div class="card-body" style="text-align:justify">
         <h2 class="h5 card-title">About this explorer</h2>
-        <p class="text-body-secondary small">RSCM decomposes cryptographic sovereignty into three distinct
-          constructs, indigenous cryptographic capacity, indigenous post-quantum control, and external
-          dependency, and certifies a country as a post-quantum maker only by a strict gate of demonstrated,
-          institutionally sustained capability. This page is the companion to the
+        <p class="text-body-secondary small">RSCM scores post-quantum migration readiness and decomposes
+          cryptographic sovereignty into three constructs, indigenous cryptographic capacity, indigenous
+          post-quantum control, and external dependency. A country is classified as a post-quantum maker only when
+          the evidence shows sustained institutional capability in at least one creation layer. This page is the
+          companion to the
           <a href="https://arxiv.org/abs/2609.18477" target="_blank" rel="noopener">RSCM paper (arXiv:2609.18477)</a>.</p>
         <h3 class="h6 fw-bold mt-3">How it works</h3>
         <p class="text-body-secondary small mb-2">The assessment is produced in two stages. Human coders score
@@ -261,9 +264,9 @@
           locally.</p>
         <h3 class="h6 fw-bold mt-3">The three constructs</h3>
         <ul class="text-body-secondary small mb-0">
-          <li><strong>Indigenous cryptographic capacity (ICC)</strong> &ndash; the general, classical-inclusive base.</li>
-          <li><strong>Indigenous post-quantum control</strong> &ndash; the quantum-safe layer only, gated for the maker label.</li>
-          <li><strong>External dependency (ED)</strong> &ndash; how much of the deployed stack is foreign-supplied.</li>
+          <li><strong>Indigenous cryptographic capacity (ICC):</strong> general capacity, including classical cryptography.</li>
+          <li><strong>Indigenous post-quantum control:</strong> the quantum-safe layer only; its creation cells decide the maker label.</li>
+          <li><strong>External dependency (ED):</strong> the extent to which the deployed post-quantum stack is foreign-supplied.</li>
         </ul>
 
         <h3 class="h6 fw-bold mt-4">Version and data</h3>
@@ -433,27 +436,27 @@
   /* glossary: plain explanations of every metric and value, shown on info icons */
   var INFO = {
     n:"Total countries in this purposive sample of documented cryptographic actors. It is not a global census.",
-    makers:"Countries that clear the maker gate: they design, implement, or validate post-quantum cryptography on a sustained institutional basis. Maker type marks which creation layers clear the gate, not depth or scale; two makers of the same type can differ widely, and depth is read from Cr, ICC, and the plane above.",
-    maker:"A country that clears the maker gate by designing, implementing, or validating post-quantum cryptography on a sustained institutional basis. The type marks which creation layers clear the gate, not depth or scale, so two makers of the same type can differ widely; read depth from Cr, ICC, and the plane above.",
-    capable:"Countries with real general cryptographic capacity that still depend on foreign parties for the post-quantum layer.",
-    adopter:"Ready adopters: countries that have advanced their migration without building either capacity or control.",
-    dependent:"Countries low on both general capacity and post-quantum creation, relying on external supply for the quantum-safe stack.",
-    meanret:"Average maker retention across all makers. Higher means the maker set as a whole is robust to coding uncertainty.",
-    retention:"Share of a 4000-draw plausible-state bootstrap, resampling each cell within its evidence grade, that keeps the country's maker verdict. Near 100% means the verdict is robust.",
-    R:"Readiness R (0 to 4): how far the country has gone in preparing to deploy post-quantum cryptography, averaged over strategy, inventory, standards adoption, deployment, and workforce. It measures preparation, not the ability to build the cryptography.",
-    ICC:"Indigenous cryptographic capacity (0 to 4): the general, classical-inclusive ability to produce and control cryptography, averaged over five layers. A high value can sit next to near-zero post-quantum creation.",
-    Cr:"Indigenous post-quantum creation (0 to 4): how much of the quantum-safe layer the country itself designs, implements, and validates. This is the axis the maker gate reads.",
+    makers:"Countries that clear the maker gate, that is, countries that design, implement, or validate post-quantum cryptography on a sustained institutional basis. The maker type records which creation layers clear the gate, not depth or scale; two makers of the same type can differ widely, and depth is read from Cr and ICC.",
+    maker:"A country that clears the maker gate by designing, implementing, or validating post-quantum cryptography on a sustained institutional basis. The type records which creation layers clear the gate, not depth or scale, so two makers of the same type can differ widely; depth is read from Cr and ICC.",
+    capable:"Countries with general cryptographic capacity (ICC of 2 or more) that depend on foreign parties for the post-quantum layer.",
+    adopter:"Countries whose migration readiness is 2 or more without general capacity or post-quantum control.",
+    dependent:"Countries below the thresholds on readiness, general capacity, and post-quantum creation, relying on external supply for the quantum-safe stack.",
+    meanret:"Mean maker retention across all countries. A higher value means the classification as a whole is less sensitive to coding uncertainty.",
+    retention:"Share of a 4000-draw bootstrap, resampling each cell within the plausible states allowed by its evidence grade, in which the country keeps its maker verdict.",
+    R:"Readiness R (0 to 4): progress of the national post-quantum migration, averaged over strategy, inventory, standards adoption, deployment, and workforce. It measures preparation, not the ability to produce the cryptography.",
+    ICC:"Indigenous cryptographic capacity (0 to 4): the general ability to produce and control cryptography, including classical cryptography, averaged over five layers. A high value can coincide with near-zero post-quantum creation.",
+    Cr:"Indigenous post-quantum creation (0 to 4): the mean of the design, implementation, and validation cells, that is, how much of the quantum-safe layer the country itself produces. The maker gate is applied to these cells.",
     ED:"External dependency (0 to 4): how much the post-quantum stack relies on foreign primitives, products, and validation. A higher value means more dependent.",
     natctrl:"National control (0 to 4): the degree to which the country can govern and sustain its own post-quantum stack.",
     cls:"Class under the maker gate: post-quantum maker, capable but PQC-dependent, ready adopter, or dependent.",
-    gate:"Maker gate: a country qualifies as a maker only by reaching level 3 on at least one creation layer (primitive design, implementation, or validation) on a sustained institutional basis. Classical capability and governance authority alone never qualify. Clearing the gate is a threshold, not a ranking of depth or scale.",
-    boundary:"Boundary case: the maker verdict rests on a creation cell at the 2-to-3 threshold, so it is sensitive to coding and flips in a meaningful share of the bootstrap.",
-    evidence:"Evidence grade for the cell: H high, M medium, L low. It marks how strong the public evidence behind the score is.",
+    gate:"Maker gate: a country is a maker only if it reaches level 3 on at least one creation layer (primitive design, implementation, or validation) on a sustained institutional basis. Classical capability and governance authority do not qualify on their own. The gate is a threshold, not a ranking of depth or scale.",
+    boundary:"Boundary case: the maker verdict rests on a single creation cell at the level-3 threshold, so it is sensitive to coding and changes in part of the bootstrap draws.",
+    evidence:"Evidence grade for the cell: H high, M medium, L low. It records how well the public evidence supports the level.",
     control:"The five coded layers of the quantum-safe stack: primitive design, implementation, validation, national integration, and replaceability.",
     capacity:"General, classical-inclusive cryptographic capacity across five layers of authorship, supply, operation, governance, and talent.",
     readiness:"Preparation to deploy post-quantum cryptography, across five readiness dimensions.",
     ci:"Uncertainty interval: the range the score spans across the plausible-state bootstrap over evidence grades.",
-    gateBand:"Shaded band: the post-quantum creation region. Only countries at or above the gate line on creation can clear the maker gate."
+    gateBand:"Shaded band: the region above the gate line on creation. Only countries in this band clear the maker gate."
   };
   function ii(key){
     var t=INFO[key]; if(!t) return "";
@@ -1065,7 +1068,7 @@
     else if(live.hiddenPause){ live.hiddenPause=false; live.play(true); }
   });
 
-  var VERSION="1.3";
+  var VERSION="1.4";
   function setById(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
   var when = META.generated || "n/a";
   setById("gendate", when);
