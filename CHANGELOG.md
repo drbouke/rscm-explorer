@@ -24,6 +24,8 @@ Evidence updates without level change (newer or primary source): Cameroon B1, Ba
 
 Class counts: 16 full-stack makers, 5 research makers, 10 capable but PQC-dependent, 1 ready adopter, 25 dependent.
 
+Gate-cell reliability for this snapshot (blind second coding of B1-B3 for all 57 countries): exact agreement 75%, within one level 99%, weighted kappa 0.91; maker verdict agreed for 56 of 57 countries (Vietnam differs). Details in `releases/2026-09-21/gate_reliability.md`.
+
 ## 2026-09-16 (Explorer 1.0 to 1.1)
 
 Initial published dataset (57 countries); arXiv citation added.
