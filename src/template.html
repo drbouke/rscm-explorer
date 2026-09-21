@@ -20,6 +20,29 @@
   .info-i:hover,.info-i:focus{color:var(--bs-body-color);border-color:var(--bs-secondary-color);outline:none}
   .tooltip{--bs-tooltip-max-width:280px}
   .tooltip .tooltip-inner{text-align:left}
+  /* live world view: keeps its own dark palette in both themes */
+  .live{position:relative;background:#0a1224;border-radius:.5rem;overflow:hidden;color:#dbe4f3}
+  .live svg{display:block;width:100%;height:auto}
+  .live .cty{stroke:#0a1224;stroke-width:.5;transition:fill .6s}
+  .live .cty.on{cursor:pointer}
+  .live .cty.on:hover{stroke:#fff;stroke-width:1}
+  .live .hud{border-top:1px solid rgba(255,255,255,.12);padding:.6rem .9rem;font-size:.8rem;line-height:1.35;
+    display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(220px,1fr) minmax(220px,1.6fr);gap:.4rem 1.4rem;align-items:center;min-height:86px}
+  .live .hud .why{color:#b7c4dc}
+  .live .hud .bar{height:5px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+  .live .hud .bar i{display:block;height:100%;border-radius:3px}
+  .live .hud .k{font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:#93a4c3}
+  .live .ctl{position:absolute;right:12px;top:12px;display:flex;gap:.35rem;flex-wrap:wrap;justify-content:flex-end}
+  .live .ctl .btn{--bs-btn-color:#cfd9ea;--bs-btn-border-color:rgba(255,255,255,.25);--bs-btn-hover-bg:rgba(255,255,255,.12);
+    --bs-btn-hover-color:#fff;--bs-btn-hover-border-color:rgba(255,255,255,.4);--bs-btn-active-bg:#2fbf71;--bs-btn-active-border-color:#2fbf71;--bs-btn-active-color:#06130c}
+  .live .lg{position:absolute;left:12px;top:12px;display:flex;gap:.8rem;flex-wrap:wrap;font-size:.72rem;color:#b7c4dc}
+  .live .lg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
+  .live .tip{position:absolute;pointer-events:none;background:rgba(8,14,30,.92);border:1px solid rgba(255,255,255,.15);border-radius:.35rem;
+    padding:.3rem .5rem;font-size:.74rem;white-space:nowrap;transform:translate(-50%,-125%);display:none}
+  @media (max-width:900px){.live .hud{grid-template-columns:1fr 1fr}.live .hud .why{grid-column:1 / -1}}
+  @media (max-width:640px){.live .hud{grid-template-columns:1fr}.live .lg{display:none}
+    .live .ctl{position:static;justify-content:flex-start;padding:.5rem .6rem 0}}
+  @media (prefers-reduced-motion:reduce){.live .cty{transition:none}}
 </style>
 </head>
 <body>
@@ -87,6 +110,36 @@
 
   <div class="tab-content">
   <div class="tab-pane fade show active" id="tab-explore" role="tabpanel">
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h5 card-title">Live world view</h2>
+      <p class="card-text text-body-secondary small" style="text-align:justify">Every assessed country on the map,
+        colored by the selected layer. Makers emit outward pulses paced by their creation score<span class="info-i" data-info="Cr">i</span>;
+        countries whose deployed post-quantum layer is foreign-supplied (external dependency 3 or 4) receive an inbound
+        flow drawn from the standardization hub at NIST, whose ML-KEM, ML-DSA and SLH-DSA schemes those stacks adopt.
+        The spotlight cycles through the sample; hover for scores, click for the evidence.</p>
+      <div class="live" id="live">
+        <svg id="worldmap" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" role="img"
+          aria-label="Animated world map of post-quantum readiness and sovereignty classes"></svg>
+        <div class="lg" id="livelegend"></div>
+        <div class="ctl">
+          <div class="btn-group btn-group-sm" role="group" aria-label="Map layer" id="livelayers">
+            <button type="button" class="btn btn-outline-light active" data-layer="class">Class</button>
+            <button type="button" class="btn btn-outline-light" data-layer="R">Readiness</button>
+            <button type="button" class="btn btn-outline-light" data-layer="CREATE">Creation</button>
+            <button type="button" class="btn btn-outline-light" data-layer="ED">Dependency</button>
+          </div>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Playback">
+            <button type="button" class="btn btn-outline-light" id="liveplay" aria-label="Pause">&#10074;&#10074;</button>
+            <button type="button" class="btn btn-outline-light" id="livenext" aria-label="Next country">&#8250;</button>
+          </div>
+        </div>
+        <div class="tip" id="livetip"></div>
+        <div class="hud" id="livehud"></div>
+      </div>
+    </div>
+  </div>
 
   <div class="card mb-4">
     <div class="card-body">
@@ -272,6 +325,9 @@
 </div>
 
 <script>__BS_JS__</script>
+<script>__D3__</script>
+<script>__TOPO__</script>
+<script type="application/json" id="world">__WORLD__</script>
 <script type="application/json" id="data">__DATA__</script>
 <script>
 (function(){
@@ -727,7 +783,7 @@
     var lc=document.getElementById("localcount"); if(lc) lc.textContent=n;
     var b=document.getElementById("editbadge"); if(b){ b.textContent=n; b.hidden = n===0; }
   }
-  function refreshAll(){ applyData(); renderStats(); populateRegions(); drawPlane(); render(); updateLocalBar(); }
+  function refreshAll(){ applyData(); renderStats(); populateRegions(); drawPlane(); render(); updateLocalBar(); initLive(); }
   function ingest(records){
     if(!Array.isArray(records)) records=[records];
     var ov=loadOverrides(), added=0, updated=0, bad=0, names={};
@@ -817,7 +873,188 @@
   });
   tips(document);
 
-  var VERSION="1.2";
+  /* ---- live world view: animated map of the assessed countries ---- */
+  var WORLD = JSON.parse(document.getElementById("world").textContent);
+  var ATLAS_ALIAS = {"UAE":"United Arab Emirates","Cote d'Ivoire":"Côte d'Ivoire","United States":"United States of America"};
+  // countries absent from the 110m atlas, or whose geographic centroid is pulled by outlying territory
+  var LL_FIX = {"Singapore":[103.82,1.35],"Bahrain":[50.55,26.07],"Mauritius":[57.55,-20.3],
+                "United States":[-98.5,39.8],"France":[2.2,46.6],"Russia":[50,58],"Canada":[-100,56],
+                "Netherlands":[5.3,52.2],"United Kingdom":[-1.5,52.8],"New Zealand":[172.5,-41.5],"Japan":[138.5,36.5]};
+  var HUB = [-77.2,39.14];   // NIST, Gaithersburg
+  var GHEX = {maker:"#2fbf71", capable:"#f2b134", adopter:"#38bdf8", dependent:"#ef5b5b"};
+  var live = {layer:"class", playing:!window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+              spot:-1, raf:null, timer:null, nodes:[], arcs:[], t0:0};
+
+  function liveFill(d){
+    if(live.layer==="class") return GHEX[grp(d.cls)];
+    var v=(live.layer==="R"?d.R:live.layer==="CREATE"?d.CREATE:d.ED)/4;
+    var to=live.layer==="ED"?"#ef5b5b":live.layer==="R"?"#38bdf8":"#2fbf71";
+    return d3.interpolateLab("#22304f", to)(0.15+0.85*v);
+  }
+  function liveLegend(){
+    var el=document.getElementById("livelegend"), h="";
+    if(live.layer==="class"){
+      ["maker","capable","adopter","dependent"].forEach(function(g){ h+='<span><i style="background:'+GHEX[g]+'"></i>'+GLAB[g]+'</span>'; });
+      h+='<span><i style="background:#22304f"></i>Not assessed</span>';
+    } else {
+      var lab={R:"Readiness R",CREATE:"Indigenous PQC creation Cr",ED:"External dependency ED"}[live.layer];
+      h+='<span>'+lab+' &nbsp;0 <i style="background:#22304f"></i>&rarr; 4 <i style="background:'+liveFill({R:4,CREATE:4,ED:4,cls:""})+'"></i></span>';
+    }
+    el.innerHTML=h;
+  }
+  function liveHud(d){
+    var el=document.getElementById("livehud"); if(!d){ el.innerHTML=""; return; }
+    var g=grp(d.cls), col=GHEX[g];
+    function bar(k,v,c){ return '<div class="d-flex align-items-center gap-2 mt-1"><span class="k" style="width:96px;white-space:nowrap">'+k+'</span>'+
+      '<div class="bar flex-grow-1"><i style="width:'+(v/4*100).toFixed(0)+'%;background:'+c+'"></i></div><span style="width:26px;text-align:right">'+(+v).toFixed(1)+'</span></div>'; }
+    var top=null; (d.B_dims||[]).forEach(function(b){ if(!top||b.level>top.level) top=b; });
+    var why=(d.gate&&top&&top.why)? top.why : (d.ED_detail&&d.ED_detail.why)||"";
+    el.innerHTML='<div><div class="d-flex align-items-baseline gap-2 flex-wrap"><strong style="font-size:1rem;color:#fff">'+esc(d.country)+'</strong>'+
+      '<span class="badge rounded-pill" style="background:'+col+';color:#06130c">'+esc(d.cls)+'</span></div>'+
+      '<div class="k mt-1">'+esc(d.region||"")+(d.type&&d.type!==d.cls?' &middot; '+esc(d.type):'')+(d.boundary?' &middot; boundary case':'')+'</div>'+
+      '<div style="color:#93a4c3;font-size:.7rem" class="mt-1">Click the country for every coded cell and source.</div></div>'+
+      '<div>'+bar("Readiness",d.R,"#38bdf8")+bar("Capacity",d.ICC,"#a78bfa")+bar("PQC creation",d.CREATE,"#2fbf71")+bar("Dependency",d.ED,"#ef5b5b")+'</div>'+
+      '<div class="why">'+esc(why)+'</div>';
+  }
+  function initLive(){
+    var svgEl=document.getElementById("worldmap"); if(!svgEl||typeof d3==="undefined") return;
+    if(live.raf) cancelAnimationFrame(live.raf); if(live.timer) clearInterval(live.timer);
+    var svg=d3.select(svgEl); svg.selectAll("*").remove();
+    var W=1000,H=520;
+    var feats=topojson.feature(WORLD, WORLD.objects.countries).features;
+    var proj=d3.geoNaturalEarth1().fitExtent([[6,6],[W-6,H-6]],{type:"Sphere"});
+    var path=d3.geoPath(proj);
+    var byAtlas={}; DATA.forEach(function(d){ byAtlas[ATLAS_ALIAS[d.country]||d.country]=d; });
+    var ll={}; feats.forEach(function(f){ var d=byAtlas[f.properties.name]; if(d) ll[d.country]=d3.geoCentroid(f); });
+    DATA.forEach(function(d){ if(LL_FIX[d.country]) ll[d.country]=LL_FIX[d.country]; });
+
+    var defs=svg.append("defs");
+    var glow=defs.append("filter").attr("id","liveglow").attr("x","-60%").attr("y","-60%").attr("width","220%").attr("height","220%");
+    glow.append("feGaussianBlur").attr("stdDeviation","2.2").attr("result","b");
+    var mg=glow.append("feMerge"); mg.append("feMergeNode").attr("in","b"); mg.append("feMergeNode").attr("in","SourceGraphic");
+
+    svg.append("path").attr("d",path({type:"Sphere"})).attr("fill","#0d1730");
+    svg.append("path").attr("d",path(d3.geoGraticule10())).attr("fill","none").attr("stroke","#182444").attr("stroke-width",.5);
+    var tip=document.getElementById("livetip"), wrap=document.getElementById("live");
+    function showTip(ev,d){
+      tip.style.display="block";
+      tip.innerHTML='<strong>'+esc(d.country)+'</strong> &middot; '+esc(d.cls)+'<br>R '+d.R.toFixed(1)+' &middot; ICC '+d.ICC.toFixed(1)+' &middot; Cr '+d.CREATE.toFixed(2)+' &middot; ED '+d.ED;
+      var r=wrap.getBoundingClientRect(); tip.style.left=(ev.clientX-r.left)+"px"; tip.style.top=(ev.clientY-r.top)+"px";
+    }
+    function hideTip(){ tip.style.display="none"; }
+    svg.append("g").selectAll("path").data(feats).enter().append("path")
+      .attr("class",function(f){ return "cty"+(byAtlas[f.properties.name]?" on":""); })
+      .attr("d",path)
+      .attr("fill",function(f){ var d=byAtlas[f.properties.name]; return d?liveFill(d):"#22304f"; })
+      .on("mousemove",function(ev,f){ var d=byAtlas[f.properties.name]; if(d) showTip(ev,d); })
+      .on("mouseleave",hideTip)
+      .on("click",function(ev,f){ var d=byAtlas[f.properties.name]; if(d){ live.spot=live.order.indexOf(d); spotlight(); openDrawer(d);} });
+
+    // inbound flows: foreign-supplied PQC layer (ED >= 3), drawn from the standardization hub
+    var arcG=svg.append("g"), ringG=svg.append("g"), dotG=svg.append("g"), labG=svg.append("g"), spotG=svg.append("g");
+    live.arcs=[]; live.nodes=[];
+    DATA.forEach(function(d,i){
+      var p=ll[d.country]; if(!p) return;
+      var xy=proj(p), g=grp(d.cls);
+      var node={d:d,x:xy[0],y:xy[1],g:g,phase:(i*0.37)%1,period:g==="maker"?(4200-700*d.CREATE):5200};
+      live.nodes.push(node);
+      if(d.ED>=3 && g!=="maker"){
+        var el=arcG.append("path").attr("d",path({type:"LineString",coordinates:[HUB,p]}))
+          .attr("fill","none").attr("stroke","#ef5b5b").attr("stroke-width",.7).attr("opacity",.28);
+        var len=el.node().getTotalLength();
+        var dot=arcG.append("circle").attr("r",2.2).attr("fill","#ffb4b4").attr("filter","url(#liveglow)").attr("opacity",0);
+        live.arcs.push({el:el.node(),dot:dot,len:len,phase:(i*0.61)%1,period:5000+(i%7)*450,node:node});
+      }
+    });
+    var hubxy=proj(HUB);
+    dotG.append("circle").attr("cx",hubxy[0]).attr("cy",hubxy[1]).attr("r",3).attr("fill","#fff").attr("filter","url(#liveglow)");
+    labG.append("text").attr("x",hubxy[0]+6).attr("y",hubxy[1]-5).attr("fill","#c7d2e6").attr("font-size",9).text("NIST");
+    // maker labels with greedy collision avoidance: a label that would overlap one already placed is skipped (hover still names it)
+    var placed=[];
+    function labelFree(x,y,w,h){ for(var i=0;i<placed.length;i++){ var b=placed[i]; if(x<b.x+b.w&&x+w>b.x&&y<b.y+b.h&&y+h>b.y) return false; } placed.push({x:x,y:y,w:w,h:h}); return true; }
+    live.nodes.slice().sort(function(a,b){ return b.d.CREATE-a.d.CREATE; }).forEach(function(n){
+      if(n.g!=="maker") return;
+      var w=n.d.country.length*4.6+4, h=10;
+      if(labelFree(n.x+4,n.y-5,w,h)) n.label=true;
+    });
+    live.nodes.forEach(function(n){
+      n.ring=ringG.append("circle").attr("cx",n.x).attr("cy",n.y).attr("fill","none").attr("stroke",GHEX[n.g]).attr("stroke-width",1.1);
+      n.ring2=n.g==="maker"?ringG.append("circle").attr("cx",n.x).attr("cy",n.y).attr("fill","none").attr("stroke",GHEX[n.g]).attr("stroke-width",.8):null;
+      n.dot=dotG.append("circle").attr("cx",n.x).attr("cy",n.y).attr("r",n.g==="maker"?3.4:2.4).attr("fill",GHEX[n.g])
+        .attr("stroke","#0a1224").attr("stroke-width",.6).attr("filter","url(#liveglow)").style("cursor","pointer")
+        .on("mousemove",function(ev){ showTip(ev,n.d); }).on("mouseleave",hideTip)
+        .on("click",function(){ live.spot=live.order.indexOf(n.d); spotlight(); openDrawer(n.d); });
+      if(n.label) n.labelEl=labG.append("text").attr("x",n.x+5).attr("y",n.y+3).attr("fill","#dbe4f3").attr("font-size",8.5).attr("opacity",.9).text(n.d.country);
+    });
+    live.spotG=spotG; live.ll=ll; live.proj=proj;
+    liveLegend();
+    // spotlight order: makers by creation, then the rest by capacity
+    live.order=DATA.slice().sort(function(a,b){ var ga=grp(a.cls)==="maker"?0:1, gb=grp(b.cls)==="maker"?0:1; return ga-gb || (b.CREATE-a.CREATE) || (b.ICC-a.ICC); });
+    if(live.spot<0) live.spot=0;
+    function spotlight(){
+      var d=live.order[((live.spot%live.order.length)+live.order.length)%live.order.length]; if(!d) return;
+      var p=live.ll[d.country]; spotG.selectAll("*").remove(); liveHud(d);
+      live.nodes.forEach(function(n){ if(n.labelEl) n.labelEl.attr("opacity", n.d===d?0:.9); });
+      if(!p) return;
+      var xy=live.proj(p), col=GHEX[grp(d.cls)];
+      spotG.append("circle").attr("cx",xy[0]).attr("cy",xy[1]).attr("r",7).attr("fill","none").attr("stroke","#fff").attr("stroke-width",1.4)
+        .transition().duration(900).attr("r",22).attr("opacity",0);
+      spotG.append("circle").attr("cx",xy[0]).attr("cy",xy[1]).attr("r",5.5).attr("fill","none").attr("stroke",col).attr("stroke-width",1.6);
+      spotG.append("text").attr("x",xy[0]).attr("y",xy[1]-11).attr("text-anchor","middle").attr("fill","#fff").attr("font-size",11).attr("font-weight",600)
+        .attr("paint-order","stroke").attr("stroke","#0a1224").attr("stroke-width",3).text(d.country);
+    }
+    live.spotlight=spotlight;
+    spotlight();
+    function frame(now){
+      var t=now-live.t0;
+      live.nodes.forEach(function(n){
+        var ph=((t/n.period)+n.phase)%1;
+        if(n.g==="maker"){
+          n.ring.attr("r",3+ph*26).attr("opacity",(1-ph)*.75);
+          var ph2=(ph+0.5)%1; n.ring2.attr("r",3+ph2*26).attr("opacity",(1-ph2)*.45);
+        } else if(n.d.ED>=4){
+          n.ring.attr("r",2+(1-ph)*14).attr("opacity",ph*.55);
+        } else {
+          n.ring.attr("r",2+(1-ph)*9).attr("opacity",ph*.35);
+        }
+      });
+      live.arcs.forEach(function(a){
+        var ph=((t/a.period)+a.phase)%1, pt=a.el.getPointAtLength(ph*a.len);
+        a.dot.attr("cx",pt.x).attr("cy",pt.y).attr("opacity",ph<.06?ph/.06:ph>.9?(1-ph)/.1:.95);
+      });
+      if(live.playing) live.raf=requestAnimationFrame(frame);
+    }
+    function play(on){
+      live.playing=on; document.getElementById("liveplay").innerHTML=on?"&#10074;&#10074;":"&#9654;";
+      document.getElementById("liveplay").setAttribute("aria-label",on?"Pause":"Play");
+      if(live.timer) clearInterval(live.timer); live.timer=null;
+      if(on){ live.t0=performance.now()-(live.tPaused||0); live.raf=requestAnimationFrame(frame);
+              live.timer=setInterval(function(){ live.spot++; spotlight(); },4500); }
+      else { live.tPaused=performance.now()-live.t0; if(live.raf) cancelAnimationFrame(live.raf); }
+    }
+    live.play=play;
+    live.t0=performance.now();
+    play(live.playing);
+    if(!live.playing) frame(live.t0);   // one static frame under reduced motion
+  }
+  document.querySelectorAll("#livelayers .btn").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.querySelectorAll("#livelayers .btn").forEach(function(x){ x.classList.remove("active"); });
+      b.classList.add("active"); live.layer=b.getAttribute("data-layer");
+      var byAtlas={}; DATA.forEach(function(d){ byAtlas[ATLAS_ALIAS[d.country]||d.country]=d; });
+      d3.select("#worldmap").selectAll("path.cty").attr("fill",function(f){ var d=byAtlas[f.properties.name]; return d?liveFill(d):"#22304f"; });
+      liveLegend();
+    });
+  });
+  document.getElementById("liveplay").addEventListener("click",function(){ if(live.play) live.play(!live.playing); });
+  document.getElementById("livenext").addEventListener("click",function(){ live.spot++; if(live.spotlight) live.spotlight(); });
+  document.addEventListener("visibilitychange",function(){
+    if(!live.play) return;
+    if(document.hidden){ if(live.playing){ live.play(false); live.hiddenPause=true; } }
+    else if(live.hiddenPause){ live.hiddenPause=false; live.play(true); }
+  });
+
+  var VERSION="1.3";
   function setById(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
   var when = META.generated || "n/a";
   setById("gendate", when);
@@ -828,6 +1065,7 @@
   drawPlane();
   render();
   updateLocalBar();
+  initLive();
 })();
 </script>
 <!-- Cloudflare Web Analytics -->

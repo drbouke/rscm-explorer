@@ -1,4 +1,8 @@
-# Dataset changes
+# Changes
+
+## 2026-09-21 (Explorer 1.3)
+
+Animated world view added at the top of the Explore tab (class, readiness, creation and dependency layers; maker pulses; inbound dependency flows from the NIST hub for countries with external dependency 3 or 4; cycling spotlight with scores and evidence; hover and click through to the country drawer). Dataset unchanged.
 
 ## 2026-09-21 (Explorer 1.2)
 

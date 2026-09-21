@@ -8,8 +8,12 @@ capability. Companion to the RSCM paper ([arXiv:2609.18477](https://arxiv.org/ab
 
 Live: https://drbouke.github.io/rscm-explorer/
 
-The published page is a single self-contained `index.html` (Bootstrap and the dataset inlined),
-so it runs offline and on any static host with no external requests.
+The published page is a single self-contained `index.html` (Bootstrap, D3, TopoJSON, the world
+atlas and the dataset inlined), so it runs offline and on any static host with no external requests.
+It opens on an animated world view: countries colored by class, readiness, creation or dependency;
+makers pulse at a rate set by their creation score; countries whose post-quantum layer is
+foreign-supplied receive an inbound flow from the NIST standardization hub; a spotlight cycles through
+the sample with each country's scores and key evidence.
 
 ## Repository layout
 
@@ -19,7 +23,7 @@ src/
   template.html       HTML + CSS + JavaScript source
   data.json           Country dataset (scores, classes, per-cell evidence and citations)
   build.py            Inlines vendor/ and data.json into index.html
-  vendor/             Pinned Bootstrap 5.3.3 (bootstrap.min.css, bootstrap.bundle.min.js)
+  vendor/             Pinned Bootstrap 5.3.3, D3 7.9.0, topojson-client 3.1.0, world-atlas 2.0.2 (countries-110m.json)
 .github/ISSUE_TEMPLATE Dataset-update issue form
 ```
 
@@ -29,8 +33,8 @@ src/
 python src/build.py
 ```
 
-This inlines `src/vendor/bootstrap.min.css`, `src/vendor/bootstrap.bundle.min.js`, and
-`src/data.json` into `src/template.html` and writes `index.html` at the repository root. There is
+This inlines the vendored libraries, the world atlas, and `src/data.json` into
+`src/template.html` and writes `index.html` at the repository root. There is
 no toolchain to install; any Python 3 works.
 
 ## Data
